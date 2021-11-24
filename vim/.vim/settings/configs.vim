@@ -9,5 +9,6 @@ augroup numbertoggle
 augroup END
 
 syntax on
+colorscheme dracula
 
 set hidden
