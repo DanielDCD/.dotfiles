@@ -12,3 +12,6 @@ syntax on
 colorscheme dracula
 
 set hidden
+
+" Search options.
+set ignorecase smartcase
