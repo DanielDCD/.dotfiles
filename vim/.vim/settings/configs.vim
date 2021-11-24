@@ -9,3 +9,5 @@ augroup numbertoggle
 augroup END
 
 syntax on
+
+set hidden
