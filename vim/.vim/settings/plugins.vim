@@ -15,4 +15,7 @@ Plug 'junegunn/fzf.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
+
+" NERDTree
+Plug 'preservim/nerdtree'
 call plug#end()
