@@ -8,4 +8,8 @@ endif
 call plug#begin('~/.vim/plugged')
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
