@@ -12,4 +12,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Git
+Plug 'tpope/vim-fugitive'
 call plug#end()
