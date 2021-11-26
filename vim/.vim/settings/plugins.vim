@@ -9,6 +9,9 @@ call plug#begin('~/.vim/plugged')
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
 
+"Airline
+Plug 'vim-airline/vim-airline'
+
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
