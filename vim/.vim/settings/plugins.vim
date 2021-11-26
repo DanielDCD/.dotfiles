@@ -24,4 +24,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " vim-mundo
 Plug 'simnalamburt/vim-mundo'
+
+" Code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
