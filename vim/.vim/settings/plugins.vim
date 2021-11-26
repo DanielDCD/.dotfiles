@@ -21,4 +21,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" vim-mundo
+Plug 'simnalamburt/vim-mundo'
 call plug#end()

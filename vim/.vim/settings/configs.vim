@@ -15,3 +15,7 @@ set hidden
 
 " Search options.
 set ignorecase smartcase
+
+" Undo
+set undofile
+set undodir=~/.vim/undo
