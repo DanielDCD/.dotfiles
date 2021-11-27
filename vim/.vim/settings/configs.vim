@@ -13,6 +13,8 @@ colorscheme dracula
 
 set hidden
 
+set showcmd
+
 " Search options.
 set ignorecase smartcase
 
