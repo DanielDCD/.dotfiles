@@ -39,4 +39,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Syntax checking.
 Plug 'vim-syntastic/syntastic'
+
+" editorconfig.
+Plug 'editorconfig/editorconfig-vim'
+  let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 call plug#end()
