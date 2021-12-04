@@ -22,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 
 " Git.
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " NERDTree.
 Plug 'preservim/nerdtree'
