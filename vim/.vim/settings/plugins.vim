@@ -43,4 +43,8 @@ Plug 'vim-syntastic/syntastic'
 " editorconfig.
 Plug 'editorconfig/editorconfig-vim'
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" Surroundings.
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
 call plug#end()
