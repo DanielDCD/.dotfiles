@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline'
 
 " fzf.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf.vim'
 
 " Git.
