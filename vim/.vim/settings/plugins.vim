@@ -36,4 +36,7 @@ Plug 'simnalamburt/vim-mundo'
 
 " Code completion.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Syntax checking.
+Plug 'vim-syntastic/syntastic'
 call plug#end()
