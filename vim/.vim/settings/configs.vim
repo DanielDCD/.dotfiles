@@ -17,6 +17,7 @@ set showcmd
 
 " Search options.
 set ignorecase smartcase
+set hlsearch incsearch
 
 " Undo
 set undofile
