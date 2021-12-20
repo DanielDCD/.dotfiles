@@ -134,6 +134,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(),
+                widget.Spacer(),
             ],
             24,
         ),
