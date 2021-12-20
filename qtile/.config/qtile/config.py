@@ -123,9 +123,9 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='sans',
+    font='Caskaydia Cove Nerd Font',
     fontsize=12,
-    padding=3,
+    padding=1,
 )
 extension_defaults = widget_defaults.copy()
 
