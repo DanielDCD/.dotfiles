@@ -135,6 +135,9 @@ screens = [
             [
                 widget.GroupBox(),
                 widget.Spacer(),
+                widget.Clock(
+                    format="%d/%m/%Y - %H:%M"
+                ),
                 widget.Systray(),
             ],
             24,
