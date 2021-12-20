@@ -135,6 +135,10 @@ screens = [
             [
                 widget.GroupBox(),
                 widget.Spacer(),
+                widget.CurrentLayoutIcon(
+                    scale=0.75
+                ),
+                widget.CurrentLayout(),
                 widget.Clock(
                     format="%d/%m/%Y - %H:%M"
                 ),
