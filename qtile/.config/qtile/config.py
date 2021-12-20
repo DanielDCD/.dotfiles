@@ -135,6 +135,7 @@ screens = [
             [
                 widget.GroupBox(),
                 widget.Spacer(),
+                widget.Systray(),
             ],
             24,
         ),
