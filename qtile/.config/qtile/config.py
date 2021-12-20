@@ -25,11 +25,18 @@
 # SOFTWARE.
 
 from typing import List  # noqa: F401
+import os
+import subprocess
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser("~/.config/qtile/autostart.sh")
+    subprocess.run([home])
 
 mod = "mod4"
 terminal = guess_terminal()
