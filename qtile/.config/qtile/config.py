@@ -144,7 +144,8 @@ screens = [
                 ),
                 widget.Systray(),
             ],
-            24,
+            size=24,
+            opacity=0.8,
         ),
     ),
 ]
