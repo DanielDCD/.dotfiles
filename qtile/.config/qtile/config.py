@@ -139,6 +139,16 @@ screens = [
                     scale=0.75
                 ),
                 widget.CurrentLayout(),
+                widget.CPU(
+                    format='{load_percent}%'
+                ),
+                widget.Memory(
+                    format='{MemUsed: .2f}/{MemTotal: .2f}{mm}'.replace(' ', ''),
+                    measure_mem='G',
+                ),
+                widget.Net(
+                    format='{down} {up}'
+                ),
                 widget.Clock(
                     format="%d/%m/%Y - %H:%M"
                 ),
