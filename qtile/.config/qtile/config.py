@@ -129,6 +129,12 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+def icon(text='?'):
+    return widget.TextBox(
+        text=text,
+        padding=3
+    )
+
 screens = [
     Screen(
         top=bar.Bar(
@@ -136,19 +142,23 @@ screens = [
                 widget.GroupBox(),
                 widget.Spacer(),
                 widget.CurrentLayoutIcon(
-                    scale=0.75
+                    scale=0.5
                 ),
                 widget.CurrentLayout(),
+                icon('\uf2db'), # Microship icon.
                 widget.CPU(
                     format='{load_percent}%'
                 ),
+                icon('\uf85a'), # Memory icon.
                 widget.Memory(
                     format='{MemUsed: .2f}/{MemTotal: .2f}{mm}'.replace(' ', ''),
                     measure_mem='G',
                 ),
+                icon('\ufa9e'), # Web icon.
                 widget.Net(
-                    format='{down} {up}'
+                    format='{down} \uf175\uf176 {up}'
                 ),
+                icon('\uf64f'), # Clock icon.
                 widget.Clock(
                     format="%d/%m/%Y - %H:%M"
                 ),
