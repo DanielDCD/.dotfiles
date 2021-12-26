@@ -28,7 +28,7 @@ from typing import List  # noqa: F401
 import os
 import subprocess
 
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -163,6 +163,11 @@ screens = [
                     format="%d/%m/%Y - %H:%M"
                 ),
                 widget.Systray(),
+                widget.TextBox(
+                    text="\u23fb",
+                    padding=3,
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("arcolinux-logout") }
+                ),
             ],
             size=24,
             opacity=0.8,
