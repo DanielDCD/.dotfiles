@@ -140,7 +140,12 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(),
-                widget.Spacer(),
+                widget.TaskList(
+                    icon_size=14,
+                    txt_floating='',
+                    txt_maximized='',
+                    txt_minimized=''
+                ),
                 widget.CurrentLayoutIcon(
                     scale=0.5
                 ),
