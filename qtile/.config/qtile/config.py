@@ -38,6 +38,20 @@ def autostart():
     home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.run([home])
 
+# Dracula colors.
+colors = {
+    "foreground": "#f8f8f2",
+    "background": "#282a36",
+    "color0": "#21222c",
+    "color1": "#ff5555",
+    "color2": "#50fa7b",
+    "color3": "#f1fa8c",
+    "color4": "#bd93f9",
+    "color5": "#ff79c6",
+    "color6": "#8be9fd",
+    "color7": "#f8f8f2"
+}
+
 mod = "mod4"
 terminal = guess_terminal()
 
