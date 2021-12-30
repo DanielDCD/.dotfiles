@@ -10,6 +10,7 @@ augroup END
 
 syntax on
 colorscheme dracula
+set termguicolors
 
 set hidden
 
