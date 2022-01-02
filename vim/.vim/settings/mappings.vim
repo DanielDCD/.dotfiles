@@ -27,3 +27,6 @@ nnoremap <leader>gs :Git status<CR>
 nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gca :Git commit --amend<CR>
 nnoremap <leader>gd :Git diff HEAD<CR>
+
+" Close current buffer.
+nnoremap <leader>bd :bd<CR>
