@@ -9,7 +9,7 @@ let mapleader = " "
 nnoremap <TAB> :bnext<CR> 
 nnoremap <S-TAB> :bprevious<CR>
 
-# Alternate way to save and quit.
+" Alternate way to save and quit.
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :qall<CR>
 nnoremap <leader>Qq :q!<CR>
