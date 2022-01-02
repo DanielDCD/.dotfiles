@@ -18,4 +18,4 @@ nnoremap <leader>W :wall<CR>
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>WQ :wqall<CR>
 
-
+nnoremap <leader>e :NERDTreeToggle<CR> 
