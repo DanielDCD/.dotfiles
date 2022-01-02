@@ -49,4 +49,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Surroundings.
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
+
+" Start screen.
+Plug 'mhinz/vim-startify'
 call plug#end()
