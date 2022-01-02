@@ -21,3 +21,9 @@ nnoremap <leader>WQ :wqall<CR>
 nnoremap <leader>e :NERDTreeToggle<CR> 
 
 nnoremap <leader>f :Files<CR> 
+
+nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gs :Git status<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gca :Git commit --amend<CR>
+nnoremap <leader>gd :Git diff HEAD<CR>
