@@ -52,4 +52,7 @@ Plug 'tpope/vim-surround'
 
 " Start screen.
 Plug 'mhinz/vim-startify'
+
+" Project root.
+Plug 'dbakker/vim-projectroot'
 call plug#end()

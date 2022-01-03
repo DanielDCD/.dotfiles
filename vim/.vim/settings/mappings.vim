@@ -30,3 +30,7 @@ nnoremap <leader>gd :Git diff HEAD<CR>
 
 " Close current buffer.
 nnoremap <leader>bd :bd<CR>
+
+" ProjectRoot.
+nnoremap <leader>dp :ProjectRootCD<cr>
+nnoremap <silent> <leader>dt :ProjectRootExe NERDTree<cr>
