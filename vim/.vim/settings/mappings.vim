@@ -5,6 +5,8 @@ cnoremap ´ <Esc>
 nnoremap <Space> <Nop>
 let mapleader = " "
 
+nnoremap <leader><leader> :
+
 " Use TAB to move between buffers in normal mode.
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
