@@ -137,16 +137,28 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Caskaydia Cove Nerd Font',
-    fontsize=12,
+    font='CaskaydiaCove NF',
+    fontsize=14,
     padding=1,
 )
 extension_defaults = widget_defaults.copy()
 
-def icon(text='?'):
+def icon(background, foreground, text='?'):
     return widget.TextBox(
         text=text,
+        background=background,
+        foreground=foreground,
+        fontsize=24,
         padding=3
+    )
+
+def powerline(foreground, background = None, text='\ue0b2', padding=-0.5):
+    return widget.TextBox(
+        text=text,
+        background=background,
+        foreground=foreground,
+        fontsize=22,
+        padding=padding,
     )
 
 screens = [
@@ -154,46 +166,96 @@ screens = [
         top=bar.Bar(
             [
                 widget.TextBox(
-                    text="\uf17c",
+                    text="\uf17c", # Linux icon.
                     padding=3,
+                    background=colors["color4"],
+                    foregroudn=colors["foreground"],
+                    fontsize=24,
                 ),
-                widget.GroupBox(),
+                powerline(colors["color4"], colors["color5"], text='\ue0b0', padding=-0.505),
+                widget.GroupBox(
+                    active=colors["foreground"],
+                    inactive=colors["color0"],
+                    highlight_color=colors["color4"],
+                    highlight_method='line',
+                    urgent_alert_method='box',
+                    urgent_text=colors["color1"],
+                    foreground=colors["foreground"],
+                    hide_unused=True,
+                    background=colors["color5"],
+                ),
+                powerline(colors["color5"], text='\ue0b0', padding=-0.505),
                 widget.TaskList(
-                    icon_size=14,
-                    txt_floating='',
-                    txt_maximized='',
-                    txt_minimized=''
+                    txt_floating='\uf2d2',
+                    txt_maximized='\uf2d0',
+                    txt_minimized='\uf2d1',
+                    border=colors["color4"],
+                    unfocused_border=colors["color7"],
+                    urgent_border=colors["color1"],
+                    padding_x=0,
+                    padding_y=0,
+                    margin=3,
+                    icon_size=18,
                 ),
+                powerline(colors["color1"]),
                 widget.CurrentLayoutIcon(
-                    scale=0.5
+                    background=colors["color1"],
+                    foreground=colors["color0"],
+                    scale=0.75,
                 ),
-                widget.CurrentLayout(),
-                icon('\uf2db'), # Microship icon.
+                widget.CurrentLayout(
+                    background=colors["color1"],
+                    foreground=colors["color0"],
+                ),
+                powerline(colors["color2"], colors["color1"]),
+                icon(colors["color2"], colors["color0"], '\uf2db'), # Microchip icon.
                 widget.CPU(
-                    format='{load_percent}%'
+                    background=colors["color2"],
+                    foreground=colors["color0"],
+                    format='{load_percent}%',
                 ),
-                icon('\uf85a'), # Memory icon.
+                icon(colors["color2"], colors["color0"], ' \uf85a'), # Memory icon.
                 widget.Memory(
+                    background=colors["color2"],
+                    foreground=colors["color0"],
                     format='{MemUsed: .2f}/{MemTotal: .2f}{mm}'.replace(' ', ''),
                     measure_mem='G',
                 ),
-                icon('\ufa9e'), # Web icon.
+                icon(colors["color2"], colors["color0"], ' \ufa9e'), # Web icon.
                 widget.Net(
+                    background=colors["color2"],
+                    foreground=colors["color0"],
                     format='{down} \uf175\uf176 {up}'
                 ),
-                icon('\uf64f'), # Clock icon.
+                powerline(colors["color3"], colors["color2"]),
+                icon(colors["color3"], colors["color0"], '\uf64f'), # Clock icon.
                 widget.Clock(
-                    format="%d/%m/%Y - %H:%M"
+                    background=colors["color3"],
+                    foreground=colors["color0"],
+                    format="%d/%m/%Y - %H:%M",
                 ),
-                widget.Systray(),
+                powerline(colors["color4"], colors["color3"]),
+                widget.Systray(
+                    background=colors["color4"],
+                    foreground=colors["foreground"],
+                    icon_size=20,
+                ),
+                widget.Sep(
+                    background=colors["color4"],
+                    foreground=colors["foreground"],
+                ),
                 widget.TextBox(
-                    text="\u23fb",
+                    background=colors["color4"],
+                    foregroudn=colors["foreground"],
+                    text="\u23fb", # Power Button.
                     padding=3,
-                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("arcolinux-logout") }
+                    fontsize=24,
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("arcolinux-logout") },
                 ),
             ],
-            size=24,
+            size=22,
             opacity=0.8,
+            background=colors["background"]
         ),
     ),
 ]
