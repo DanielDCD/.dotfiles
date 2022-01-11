@@ -153,6 +153,10 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.TextBox(
+                    text="\uf17c",
+                    padding=3,
+                ),
                 widget.GroupBox(),
                 widget.TaskList(
                     icon_size=14,
