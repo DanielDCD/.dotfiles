@@ -122,7 +122,7 @@ for i in groups:
 
 layout_theme = {
     "border_width": 2,
-    "margin": 2,
+    "margin": 5,
     "border_focus": colors["color4"],
     "border_normal": colors["background"]
 }
@@ -130,12 +130,11 @@ layout_theme = {
 layouts = [
     layout.Columns(**layout_theme,margin_on_single=0),
     layout.Max(),
-    # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
+    layout.MonadTall(**layout_theme, single_border_width=0, single_margin=0),
+    layout.MonadWide(**layout_theme, single_border_width=0, single_margin=0),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
