@@ -120,8 +120,15 @@ for i in groups:
         #     desc="move focused window to group {}".format(i.name)),
     ])
 
+layout_theme = {
+    "border_width": 2,
+    "margin": 2,
+    "border_focus": colors["color4"],
+    "border_normal": colors["background"]
+}
+
 layouts = [
-    layout.Columns(border_focus_stack=['#d75f5f', '#8f3d3d'], border_width=4),
+    layout.Columns(**layout_theme,margin_on_single=0),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
