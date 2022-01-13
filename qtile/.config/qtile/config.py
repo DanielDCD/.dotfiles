@@ -132,7 +132,7 @@ layouts = [
     layout.Max(),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    # layout.Matrix(),
+    layout.Matrix(**layout_theme),
     layout.MonadTall(**layout_theme, single_border_width=0, single_margin=0),
     layout.MonadWide(**layout_theme, single_border_width=0, single_margin=0),
     # layout.RatioTile(),
