@@ -131,7 +131,7 @@ layouts = [
     layout.Columns(**layout_theme,margin_on_single=0),
     layout.Max(),
     # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
+    layout.Bsp(**layout_theme),
     layout.Matrix(**layout_theme),
     layout.MonadTall(**layout_theme, single_border_width=0, single_margin=0),
     layout.MonadWide(**layout_theme, single_border_width=0, single_margin=0),
