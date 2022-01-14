@@ -7,6 +7,12 @@ let mapleader = " "
 
 nnoremap <leader><leader> :
 
+" Window navigation.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Use TAB to move between buffers in normal mode.
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
