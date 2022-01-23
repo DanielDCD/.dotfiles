@@ -23,3 +23,7 @@ set hlsearch incsearch
 " Undo
 set undofile
 set undodir=~/.vim/undo
+
+if (has("clipboard"))
+  set clipboard=unnamed
+endif
