@@ -2,10 +2,10 @@ inoremap ´ <Esc>
 vnoremap ´ <Esc>
 cnoremap ´ <Esc>
 
+nnoremap ´ :
+
 nnoremap <Space> <Nop>
 let mapleader = " "
-
-nnoremap <leader><leader> :
 
 " Window navigation.
 nnoremap <C-h> <C-w>h
