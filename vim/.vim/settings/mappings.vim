@@ -1,8 +1,15 @@
-inoremap ´ <Esc>
-vnoremap ´ <Esc>
-cnoremap <silent> ´ <C-left>"<esc> 
-
-nnoremap ´ :
+" Spanish acute accent mappings.
+if (has("win32"))
+  inoremap ´´ <Esc>
+  vnoremap ´´ <Esc>
+  cnoremap <silent> ´´ <C-left>"<esc> 
+  nnoremap ´´ :
+else
+  inoremap ´ <Esc>
+  vnoremap ´ <Esc>
+  cnoremap <silent> ´ <C-left>"<esc> 
+  nnoremap ´ :
+endif
 
 nnoremap <Space> <Nop>
 let mapleader = " "
