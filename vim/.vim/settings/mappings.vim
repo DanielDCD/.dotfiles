@@ -1,6 +1,6 @@
 inoremap ´ <Esc>
 vnoremap ´ <Esc>
-cnoremap ´ <Esc>
+cnoremap <silent> ´ <C-left>"<esc> 
 
 nnoremap ´ :
 
