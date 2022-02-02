@@ -1,22 +1,17 @@
-" Vim plug.
+" Vim plug auto installer.
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+" Vim-Plug.
+call plug#begin('$HOME/.vim/plugged')
 " Themes.
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 "Airline.
 Plug 'vim-airline/vim-airline'
-  let g:airline_theme = "dracula"
-  let g:airline_left_sep = "\uE0B0"
-  let g:airline_right_sep = "\uE0B2"
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#left_sep = "\uE0B4"
-  let g:airline#extensions#tabline#right_sep = "\uE0B6"
 
 " fzf.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -44,7 +39,6 @@ Plug 'vim-syntastic/syntastic'
 
 " editorconfig.
 Plug 'editorconfig/editorconfig-vim'
-  let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Surroundings.
 Plug 'Raimondi/delimitMate'
@@ -56,3 +50,9 @@ Plug 'mhinz/vim-startify'
 " Project root.
 Plug 'dbakker/vim-projectroot'
 call plug#end()
+
+" Source Vim and Neovim common config and plugin config.
+source $HOME/.vim/common-config.vim
+
+" Source vim specific plugin config.
+source $HOME/.vim/vim-only-plugin-config/load-config.vim
