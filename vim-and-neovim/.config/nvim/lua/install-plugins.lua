@@ -12,6 +12,10 @@ return require('packer').startup(function()
   -- Language Server Protocol
   use 'neovim/nvim-lspconfig'
 
+  -- Snippets
+  use 'honza/vim-snippets'
+  use 'SirVer/ultisnips'
+
   -- Themes
   use {'dracula/vim', as = 'dracula'}
 
