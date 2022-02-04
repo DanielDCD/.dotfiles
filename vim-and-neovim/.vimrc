@@ -34,6 +34,10 @@ Plug 'simnalamburt/vim-mundo'
 " Code completion.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Snippets
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+
 " Syntax checking.
 Plug 'vim-syntastic/syntastic'
 
