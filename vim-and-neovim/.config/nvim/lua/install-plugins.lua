@@ -9,6 +9,9 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Language Server Protocol
+  use 'neovim/nvim-lspconfig'
+
   -- Themes
   use {'dracula/vim', as = 'dracula'}
 
