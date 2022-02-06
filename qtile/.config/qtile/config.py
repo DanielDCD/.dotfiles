@@ -189,6 +189,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.TextBox(
+                    mouse_callbacks={'Button1': lambda: os.system("sh ~/.config/qtile/show-launchpad.sh") },
                     text="\uf17c", # Linux icon.
                     padding=3,
                     background=colors["color4"],
