@@ -55,6 +55,9 @@ Plug 'mhinz/vim-startify'
 Plug 'dbakker/vim-projectroot'
 call plug#end()
 
+" Prevent background color from disappearing while scrolling.
+let &t_ut = ''
+
 " Source Vim and Neovim common config and plugin config.
 source $HOME/.vim/common-config.vim
 
