@@ -29,14 +29,25 @@ import os
 import subprocess
 
 from libqtile import bar, layout, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, EzKey, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.run([home])
+
+@lazy.function
+def show_launcher(qtile):
+    os.system("sh ~/.config/qtile/show-launchpad.sh")
+
+@lazy.function
+def show_power_menu(qtile):
+    qtile.cmd_spawn("arcolinux-logout")
+
+@lazy.function
+def show_task_switcher(qtile):
+    os.system("sh ~/.config/qtile/show-task-switcher.sh")
 
 # Dracula colors.
 colors = {
@@ -53,9 +64,28 @@ colors = {
 }
 
 mod = "mod4"
+
 terminal = "kitty" 
+browser = "vivaldi-stable"
+browser_incognito = "vivaldi-stable --incognito"
+file_manager = "dolphin"
+lock_screen = "betterlockscreen --lock"
 
 keys = [
+    # Launchpad and task switcher
+    Key(["mod1"], "space", show_launcher),
+    Key(["mod1"], "Tab", show_task_switcher),
+
+    # Lock screen
+    Key([mod], "F12", lazy.spawn(lock_screen)),
+
+    # Toggle fullscreen and maximum size
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
+    Key([mod], "m", lazy.layout.maximize()),
+
+    # Toggle floating
+    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -76,31 +106,60 @@ keys = [
 
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(),
-        desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(),
-        desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(),
-        desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "l",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+    ),
+    Key([mod, "control"], "h",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+    ),
+    Key([mod, "control"], "k",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+    ),
+    Key([mod, "control"], "j",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+    ),
+
+    # Flip layout for BSP.
+    Key([mod, "mod5"], "k", lazy.layout.flip_up()),
+    Key([mod, "mod5"], "j", lazy.layout.flip_down()),
+    Key([mod, "mod5"], "l", lazy.layout.flip_right()),
+    Key([mod, "mod5"], "h", lazy.layout.flip_left()),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
+    Key([mod], "n", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "Tab", lazy.next_layout(), desc="Change to next layout"),
+    Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Change to previous layout."),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+
+    # Stack controls
+    Key([mod, "shift"], "space", lazy.layout.rotate(), lazy.layout.flip()),
+
+    # Launch apps
+    Key([mod], "e", lazy.spawn(file_manager)),
+    Key([mod], "b", lazy.spawn(browser)),
+    Key([mod, "shift"], "b", lazy.spawn(browser_incognito)),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -160,7 +219,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='CaskaydiaCove NF',
+    font='CaskaydiaCove Nerd Font Mono',
     fontsize=14,
     padding=1,
 )
@@ -189,7 +248,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.TextBox(
-                    mouse_callbacks={'Button1': lambda: os.system("sh ~/.config/qtile/show-launchpad.sh") },
+                    mouse_callbacks={'Button1': show_launcher},
                     text="\uf17c", # Linux icon.
                     padding=3,
                     background=colors["color4"],
@@ -274,7 +333,7 @@ screens = [
                     text="\u23fb", # Power Button.
                     padding=3,
                     fontsize=24,
-                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("arcolinux-logout") },
+                    mouse_callbacks={'Button1': show_power_menu},
                 ),
             ],
             size=22,
