@@ -194,6 +194,8 @@ layouts = [
     layout.Bsp(**layout_theme),
     layout.Matrix(**layout_theme),
     layout.MonadTall(**layout_theme, single_border_width=0, single_margin=0),
+    layout.MonadThreeCol(**layout_theme, single_border_width=0, single_margin=0),
+    layout.MonadThreeCol(**layout_theme, single_border_width=0, single_margin=0, main_centered=False),
     layout.MonadWide(**layout_theme, single_border_width=0, single_margin=0),
     layout.RatioTile(**layout_theme),
     # layout.Tile(),
