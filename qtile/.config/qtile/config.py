@@ -187,18 +187,18 @@ layout_theme = {
 }
 
 layouts = [
+    layout.MonadTall(**layout_theme, single_border_width=0, single_margin=0),
     layout.Columns(**layout_theme,margin_on_single=0),
-    layout.Max(),
-    layout.Stack(**layout_theme, num_stacks=2),
     layout.Stack(**layout_theme, num_stacks=3),
+    layout.Stack(**layout_theme, num_stacks=2),
+    layout.MonadThreeCol(**layout_theme, single_border_width=0, single_margin=0, main_centered=False),
+    layout.MonadThreeCol(**layout_theme, single_border_width=0, single_margin=0),
+    layout.Max(),
     layout.Bsp(**layout_theme),
     layout.Matrix(**layout_theme),
-    layout.MonadTall(**layout_theme, single_border_width=0, single_margin=0),
-    layout.MonadThreeCol(**layout_theme, single_border_width=0, single_margin=0),
-    layout.MonadThreeCol(**layout_theme, single_border_width=0, single_margin=0, main_centered=False),
     layout.MonadWide(**layout_theme, single_border_width=0, single_margin=0),
     layout.RatioTile(**layout_theme),
-    # layout.Tile(),
+    layout.Floating(**layout_theme),
     layout.TreeTab(
         active_bg=colors["color4"],
         active_fg=colors["foreground"],
@@ -215,9 +215,6 @@ layouts = [
         urgent_bg=colors["color1"],
         urgent_fg=colors["foreground"],
     ),
-    layout.Floating(**layout_theme),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
