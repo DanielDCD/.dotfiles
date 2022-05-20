@@ -39,15 +39,11 @@ def autostart():
 
 @lazy.function
 def show_launcher(qtile):
-    os.system("sh ~/.config/qtile/show-launchpad.sh")
+    os.system("ulauncher &")
 
 @lazy.function
 def show_power_menu(qtile):
     qtile.cmd_spawn("arcolinux-logout")
-
-@lazy.function
-def show_task_switcher(qtile):
-    os.system("sh ~/.config/qtile/show-task-switcher.sh")
 
 # Dracula colors.
 colors = {
@@ -74,7 +70,6 @@ lock_screen = "betterlockscreen --lock"
 keys = [
     # Launchpad and task switcher
     Key(["mod1"], "space", show_launcher),
-    Key(["mod1"], "Tab", show_task_switcher),
 
     # Lock screen
     Key([mod], "F12", lazy.spawn(lock_screen)),
