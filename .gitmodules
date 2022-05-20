@@ -1,0 +1,3 @@
+[submodule "ulauncher/.config/ulauncher/user-themes/dracula"]
+	path = ulauncher/.config/ulauncher/user-themes/dracula
+	url = https://github.com/dracula/ulauncher.git
