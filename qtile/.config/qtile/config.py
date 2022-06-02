@@ -45,6 +45,14 @@ def show_launcher(qtile):
 def show_power_menu(qtile):
     qtile.cmd_spawn("arcolinux-logout")
 
+@lazy.function
+def take_screenshot(qtile):
+    qtile.cmd_spawn("flameshot gui")
+
+@lazy.function
+def take_full_screenshot(qtile):
+    qtile.cmd_spawn("flameshot full")
+
 # Dracula colors.
 colors = {
     "foreground": "#f8f8f2",
@@ -155,6 +163,10 @@ keys = [
     Key([mod], "e", lazy.spawn(file_manager)),
     Key([mod], "b", lazy.spawn(browser)),
     Key([mod, "shift"], "b", lazy.spawn(browser_incognito)),
+
+    # Screenshot
+    Key([mod], "s", take_full_screenshot),
+    Key([mod, "shift"], "s", take_screenshot),
 ]
 
 groups = [Group(i) for i in "123456789"]
