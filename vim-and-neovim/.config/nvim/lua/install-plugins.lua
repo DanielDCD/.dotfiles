@@ -12,6 +12,7 @@ return require('packer').startup(function()
   -- Language Server Protocol
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer' 
+  use 'folke/trouble.nvim'
 
   -- Code completion
   use 'hrsh7th/cmp-nvim-lsp'
