@@ -22,6 +22,7 @@ return require('packer').startup(function()
   use 'honza/vim-snippets'
   use 'SirVer/ultisnips'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
+  use 'onsails/lspkind.nvim'
 
   -- Themes
   use {'dracula/vim', as = 'dracula'}
