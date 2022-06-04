@@ -54,10 +54,6 @@ nnoremap <C-l> <C-w>l
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
-" Use TAB to move between buffers in normal mode.
-nnoremap <silent> <Tab> :bnext<CR>
-nnoremap <silent> <S-Tab> :bprevious<CR>
-
 " Alternate way to save and quit.
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :qall<CR>

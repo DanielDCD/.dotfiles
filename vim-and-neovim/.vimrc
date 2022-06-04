@@ -63,3 +63,8 @@ source $HOME/.vim/common-config.vim
 
 " Source vim specific plugin config.
 source $HOME/.vim/vim-only-plugin-config/load-config.vim
+
+" Mappings
+" Use TAB to move between buffers in normal mode.
+nnoremap <silent> <Tab> :bnext<CR>
+nnoremap <silent> <S-Tab> :bprevious<CR>
