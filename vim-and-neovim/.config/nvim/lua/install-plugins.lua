@@ -26,14 +26,14 @@ return require('packer').startup(function()
   use 'onsails/lspkind.nvim'
 
   -- Themes
-  use {'dracula/vim', as = 'dracula'}
+  use 'Mofiqul/dracula.nvim'
 
   -- Bufferline
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   -- Git
   use 'airblade/vim-gitgutter'
-	use 'tpope/vim-fugitive'
+  use 'tpope/vim-fugitive'
 
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
