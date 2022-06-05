@@ -32,7 +32,7 @@ return require('packer').startup(function()
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   -- Git
-  use 'airblade/vim-gitgutter'
+  use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
 
   -- vim-mundo

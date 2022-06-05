@@ -1,5 +1,5 @@
 nnoremap <leader>gl :Git log<CR>
-nnoremap <leader>gs :Git status<CR>
+nnoremap <leader>gst :Git status<CR>
 nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gca :Git commit --amend<CR>
 nnoremap <leader>gcm :Git commit 
