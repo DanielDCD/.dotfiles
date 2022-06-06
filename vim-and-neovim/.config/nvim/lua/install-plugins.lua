@@ -35,6 +35,9 @@ return require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
 
+  -- Statusline
+  use 'feline-nvim/feline.nvim'
+
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
 
