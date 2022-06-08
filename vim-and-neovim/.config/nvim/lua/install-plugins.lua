@@ -13,6 +13,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer' 
   use 'folke/trouble.nvim'
+  use 'j-hui/fidget.nvim'
 
   -- Code completion
   use 'hrsh7th/cmp-nvim-lsp'
