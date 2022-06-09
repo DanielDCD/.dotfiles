@@ -43,6 +43,9 @@ return require('packer').startup(function()
   -- Statusline
   use 'feline-nvim/feline.nvim'
 
+  -- Telescope
+  use 'nvim-telescope/telescope.nvim'
+
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
 
