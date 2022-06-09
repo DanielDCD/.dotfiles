@@ -9,10 +9,14 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Plenary
+  use 'nvim-lua/plenary.nvim'
+
   -- Language Server Protocol
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer' 
   use 'folke/trouble.nvim'
+  use "jose-elias-alvarez/null-ls.nvim"
   use 'j-hui/fidget.nvim'
 
   -- Code completion
