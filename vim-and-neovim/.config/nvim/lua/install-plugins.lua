@@ -46,6 +46,9 @@ return require('packer').startup(function()
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
 
+  -- Auto Pairs
+  use 'windwp/nvim-autopairs'
+
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
 
