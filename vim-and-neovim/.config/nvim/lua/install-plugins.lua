@@ -33,12 +33,18 @@ return require('packer').startup(function()
   -- Themes
   use 'Mofiqul/dracula.nvim'
 
+  -- Icons
+  use 'kyazdani42/nvim-web-devicons'
+
   -- Bufferline
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v2.*"}
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
+
+  -- File management
+  use 'kyazdani42/nvim-tree.lua'
 
   -- Statusline
   use 'feline-nvim/feline.nvim'
