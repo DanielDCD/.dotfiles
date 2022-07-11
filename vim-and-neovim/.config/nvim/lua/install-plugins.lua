@@ -45,6 +45,7 @@ return require('packer').startup(function()
 
   -- File management
   use 'kyazdani42/nvim-tree.lua'
+  use {'X3eRo0/dired.nvim', requires = 'MunifTanjim/nui.nvim'}
 
   -- Statusline
   use 'feline-nvim/feline.nvim'
