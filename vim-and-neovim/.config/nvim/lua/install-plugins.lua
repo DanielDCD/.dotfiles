@@ -14,7 +14,7 @@ return require('packer').startup(function()
 
   -- Language Server Protocol
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer' 
+  use {'williamboman/mason.nvim', requires = 'williamboman/mason-lspconfig.nvim'}
   use 'folke/trouble.nvim'
   use "jose-elias-alvarez/null-ls.nvim"
   use 'j-hui/fidget.nvim'
