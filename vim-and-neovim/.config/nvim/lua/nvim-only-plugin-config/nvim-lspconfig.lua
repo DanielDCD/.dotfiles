@@ -1,3 +1,27 @@
+local lspconfig = require("lspconfig")
+
+-- Setup language servers
+local mason_lspconfig = require("mason-lspconfig")
+mason_lspconfig.setup()
+mason_lspconfig.setup_handlers {
+
+    function (server_name) -- Default handler
+	lspconfig[server_name].setup {}
+    end,
+
+    ["sumneko_lua"] = function ()
+	lspconfig.sumneko_lua.setup {
+	    settings = {
+		Lua = {
+		    diagnostics = {
+			globals = { "vim" }
+		    }
+		}
+	    }
+	}
+    end,
+}
+
 -- Mappings
 local opts = { noremap=true, silent=true }
 map = vim.api.nvim_set_keymap
