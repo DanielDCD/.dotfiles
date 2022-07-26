@@ -56,6 +56,9 @@ return require('packer').startup(function()
   -- Auto Pairs
   use 'windwp/nvim-autopairs'
 
+  -- Motion.
+  use {'ggandor/leap.nvim', requires = 'tpope/vim-repeat'}
+
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
 
