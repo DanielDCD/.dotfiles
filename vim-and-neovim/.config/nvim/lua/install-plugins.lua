@@ -59,6 +59,9 @@ return require('packer').startup(function()
   -- Motion.
   use {'ggandor/leap.nvim', requires = 'tpope/vim-repeat'}
 
+  -- Terminal
+  use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
+
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
 
