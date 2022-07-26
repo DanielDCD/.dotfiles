@@ -39,3 +39,8 @@ map('n', '<M-CR>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 vim.cmd('autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)')
 vim.cmd('autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)')
 vim.cmd('autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)')
+
+-- Show diagnostic in insert mode
+vim.diagnostic.config({
+    update_in_insert = true
+})
