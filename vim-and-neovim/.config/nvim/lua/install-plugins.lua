@@ -63,6 +63,9 @@ return require('packer').startup(function()
   -- Terminal
   use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
 
+  -- Project management
+  use 'ahmedkhalf/project.nvim'
+
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
 
