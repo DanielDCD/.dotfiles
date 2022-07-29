@@ -18,7 +18,6 @@ return require('packer').startup(function()
   use 'folke/trouble.nvim'
   use "jose-elias-alvarez/null-ls.nvim"
   use 'j-hui/fidget.nvim'
-  use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
   -- Code completion
   use 'hrsh7th/cmp-nvim-lsp'
