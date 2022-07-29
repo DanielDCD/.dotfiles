@@ -66,6 +66,9 @@ return require('packer').startup(function()
   -- Project management
   use 'ahmedkhalf/project.nvim'
 
+  -- Start screen
+  use 'goolord/alpha-nvim'
+
   -- vim-mundo
   use 'simnalamburt/vim-mundo'
 
