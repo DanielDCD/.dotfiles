@@ -1,47 +1,58 @@
--- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
+local lspkind = require 'lspkind'
 
 cmp.setup({
-snippet = {
-    expand = function(args)
-    vim.fn["UltiSnips#Anon"](args.body)
-    end,
-},
-mapping = {
-    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable,
-    ['<C-e>'] = cmp.mapping({
-    i = cmp.mapping.abort(),
-    c = cmp.mapping.close(),
+    snippet = {
+        expand = function(args)
+            vim.fn["UltiSnips#Anon"](args.body)
+        end
+    },
+    formatting = {
+      format = require("lspkind").cmp_format {
+        with_text = true,
+        menu = {
+          nvim_lsp = "[LSP]",
+          buffer = "[Buffer]",
+          nvim_lua = "[Lua]",
+          ultisnips = "[UltiSnips]",
+          vsnip = "[vSnip]",
+          treesitter = "[treesitter]",
+          look = "[Look]",
+          path = "[Path]",
+          spell = "[Spell]",
+          calc = "[Calc]",
+          emoji = "[Emoji]",
+          neorg = "[Neorg]",
+          cmp_tabnine = "[TabNine]",
+        },
+      },
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({select = true})
     }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-},
-sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'ultisnips' },
-}, {
-    { name = 'buffer' },
-})
+    sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'ultisnips'}},
+                                 {{name = 'buffer'}})
 })
 
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+        {name = 'cmp_git'}
+    }, {{name = 'buffer'}})
+})
+
+-- Use buffer source for `/`
 cmp.setup.cmdline('/', {
-sources = {
-    { name = 'buffer' }
-}
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {{name = 'buffer'}}
 })
 
+-- Use cmdline & path source for ':'
 cmp.setup.cmdline(':', {
-sources = cmp.config.sources({
-    { name = 'path' }
-}, {
-    { name = 'cmdline' }
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}})
 })
-})
-
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-require('lspconfig')['pyright'].setup {
-capabilities = capabilities
-}
