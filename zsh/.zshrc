@@ -10,3 +10,16 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# Aliases
+alias c=clear
+
+alias ls="exa --icons"
+alias ll="exa -l --icons"
+alias la="exa -a --icons"
+alias lla="exa -al --icons"
+alias tree="exa -T --icons"
+
+alias cat="bat"
+
+alias vi="nvim"
