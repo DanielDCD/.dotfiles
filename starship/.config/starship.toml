@@ -1,0 +1,153 @@
+format = """
+ [](bright-black)\
+$sudo\
+$username\
+[](bg:blue fg:bright-black)\
+$directory\
+[ ](fg:blue bg:red)\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$git_metrics\
+[ ](fg:red bg:cyan)\
+$python\
+$conda\
+$rlang\
+$julia\
+$java\
+$lua\
+$c\
+$cmake\
+$haskell\
+$nodejs\
+$docker_context\
+[ ](fg:cyan bg:yellow)\
+$jobs\
+$cmd_duration\
+[](fg:yellow bg:green)\
+$time\
+[ ](fg:green)
+$character
+"""
+
+add_newline = true
+
+[sudo]
+symbol = " "
+style = "fg:white bg:bright-black"
+format = "[$symbol]($style)"
+disabled = false
+
+[username]
+show_always = true
+style_user = "bg:bright-black"
+style_root = "bg:bright-black"
+format = '[$user ]($style)'
+
+[directory]
+style = "fg:black bg:blue"
+format = "[ $path ]($style)"
+truncation_length = 7
+truncation_symbol = "…/"
+truncate_to_repo = true
+read_only = ""
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:red"
+format = '[[$symbol $branch ](fg:black bg:red)]($style)'
+
+[git_commit]
+format = "[$hash$tag ](fg:black bg:red)"
+tag_disabled = false
+
+[git_state]
+format = "[$state( $progress_current/$progress_total) ](fg:black bg:red)"
+style = "fg:black bg:red"
+
+[git_status]
+style = "bg:red"
+format = '[[($all_status$ahead_behind )](fg:black bg:red)]($style)'
+
+[git_metrics]
+format = '[ $added  $deleted ](fg:black bg:red)'
+disabled = false
+only_nonzero_diffs = false
+
+[python]
+symbol = " "
+style = "fg:black bg:cyan"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[conda]
+symbol = "🅒 "
+style = "fg:black bg:cyan"
+format = "[$symbol$environment ]($style)"
+ignore_base = false
+
+[rlang]
+symbol = "R "
+style = "fg:black bg:cyan"
+format = "[$symbol$version ]($style)"
+
+[julia]
+symbol = " "
+style = "fg:black bg:cyan"
+format = "[$symbol$version ]($style)"
+
+[java]
+symbol = " "
+style = "fg:black bg:cyan"
+format = "[$symbol$version ]($style)"
+
+[lua]
+symbol = " "
+style = "fg:black bg:cyan"
+format = "[$symbol$version ]($style)"
+
+[c]
+symbol = " "
+style = "fg:black bg:cyan"
+format = "[$symbol($version(-$name) )]($style)"
+
+[cmake]
+symbol = "△ "
+style = "fg:black bg:cyan"
+format = "[$symbol($version )]($style)"
+
+[haskell]
+symbol = " "
+style = "fg:black bg:cyan"
+format = "[$symbol($version )]($style)"
+
+[nodejs]
+symbol = " "
+style = "fg:black bg:cyan"
+format = "[$symbol$version]($style)"
+
+[docker_context]
+symbol = " "
+style = "bg:cyan"
+format = "[$symbol$context ]($style)"
+
+[jobs]
+style = "fg:black bg:yellow"
+format = "[$symbol$number ]($style)"
+
+[cmd_duration]
+style = "fg:black bg:yellow"
+format = "[ [$duration](fg:black bg:yellow) ]($style)"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#33658A"
+format = '[[  $time](fg:black bg:green)]($style)'
+
