@@ -23,3 +23,7 @@ alias tree="exa -T --icons"
 alias cat="bat"
 
 alias vi="nvim"
+
+# Starship prompt
+eval "$(starship init zsh)"
+
