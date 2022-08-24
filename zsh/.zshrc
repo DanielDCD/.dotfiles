@@ -7,7 +7,7 @@ HYPHEN_INSENSITIVE="true"
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git)
+plugins=(z git)
 
 source $ZSH/oh-my-zsh.sh
 
