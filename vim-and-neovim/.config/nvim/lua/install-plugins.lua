@@ -18,6 +18,7 @@ return require('packer').startup(function()
   use 'folke/trouble.nvim'
   use "jose-elias-alvarez/null-ls.nvim"
   use 'j-hui/fidget.nvim'
+  use {'glepnir/lspsaga.nvim', branch = "main"}
 
   -- Code completion
   use 'hrsh7th/cmp-nvim-lsp'
