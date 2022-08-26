@@ -16,4 +16,4 @@ require 'nvim-only-plugin-config.toggleterm'
 require 'nvim-only-plugin-config.project'
 require 'nvim-only-plugin-config.alpha'
 require 'nvim-only-plugin-config.lspsaga'
-
+require 'nvim-only-plugin-config.treesitter'

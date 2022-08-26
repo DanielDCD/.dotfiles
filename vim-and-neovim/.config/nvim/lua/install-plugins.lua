@@ -31,6 +31,12 @@ return require('packer').startup(function()
   use 'quangnguyen30192/cmp-nvim-ultisnips'
   use 'onsails/lspkind.nvim'
 
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
+
   -- Themes
   use 'Mofiqul/dracula.nvim'
 
