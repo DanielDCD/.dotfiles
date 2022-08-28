@@ -16,7 +16,10 @@ local options = {
     left_mouse_command = "buffer %d",
     middle_mouse_command = nil,
     offsets = {{ filetype = "NvimTree", text = "Files", highlight = "Directory"}},
-    indicator_icon = '▎',
+    indicator = {
+	icon = '▎',
+	style = 'icon'
+    },
     buffer_close_icon = "",
     modified_icon = "",
     close_icon = "",
