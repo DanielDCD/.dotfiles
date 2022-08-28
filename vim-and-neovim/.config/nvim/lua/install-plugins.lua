@@ -63,6 +63,9 @@ return require('packer').startup(function()
   -- Auto Pairs
   use 'windwp/nvim-autopairs'
 
+  -- Indentation guides
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- Motion.
   use {'ggandor/leap.nvim', requires = 'tpope/vim-repeat'}
 
