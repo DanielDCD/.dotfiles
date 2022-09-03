@@ -27,6 +27,9 @@ alias vi="nvim"
 # Autosuggestions
 source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Syntax highlighting
+source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Starship prompt
 eval "$(starship init zsh)"
 
