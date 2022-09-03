@@ -24,6 +24,9 @@ alias cat="bat"
 
 alias vi="nvim"
 
+# Autosuggestions
+source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Starship prompt
 eval "$(starship init zsh)"
 
