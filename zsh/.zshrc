@@ -13,6 +13,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias c=clear
+alias cls=clear
 
 alias ls="exa --icons"
 alias ll="exa -l --icons"
