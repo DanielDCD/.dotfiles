@@ -28,6 +28,9 @@ if (has("clipboard"))
   set clipboard=unnamed
 endif
 
+" Mouse
+set mouse=a
+
 " Spanish acute accent mappings.
 if (has("win32"))
   inoremap ´´ <Esc>
