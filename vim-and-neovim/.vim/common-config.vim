@@ -57,14 +57,11 @@ nnoremap <C-l> <C-w>l
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
-" Alternate way to save and quit.
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>Q :qall<CR>
-nnoremap <Leader>Qq :q!<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>W :wall<CR>
-nnoremap <Leader>wq :wq<CR>
-nnoremap <Leader>WQ :wqall<CR>
+" Save and quit.
+nnoremap <C-s> :w<CR>
+nnoremap <C-k>s :wall<CR>
+nnoremap <C-q> :q<CR>
+nnoremap <C-k>q :qall<R>
 
 " Close current buffer.
 nnoremap <silent> <Leader>bd :bd<CR>
