@@ -7,8 +7,31 @@ endif
 
 " Vim-Plug.
 call plug#begin('$HOME/.vim/plugged')
+
 " Themes.
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Code completion.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Snippets
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+
+" Syntax checking.
+Plug 'vim-syntastic/syntastic'
+
+" NERDTree.
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Project root.
+Plug 'dbakker/vim-projectroot'
+
+" Start screen.
+Plug 'mhinz/vim-startify'
 
 "Airline.
 Plug 'vim-airline/vim-airline'
@@ -22,24 +45,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" NERDTree.
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 " vim-mundo.
 Plug 'simnalamburt/vim-mundo'
-
-" Code completion.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Snippets
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-
-" Syntax checking.
-Plug 'vim-syntastic/syntastic'
 
 " editorconfig.
 Plug 'editorconfig/editorconfig-vim'
@@ -48,21 +55,17 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 
-" Start screen.
-Plug 'mhinz/vim-startify'
-
-" Project root.
-Plug 'dbakker/vim-projectroot'
 call plug#end()
+
+" Load plugin config
+colorscheme dracula
+source $HOME/.vim/plugin-config/load-config.vim
 
 " Prevent background color from disappearing while scrolling.
 let &t_ut = ''
 
 " Source Vim and Neovim common config and plugin config.
 source $HOME/.vim/common-config.vim
-
-" Source vim specific plugin config.
-source $HOME/.vim/vim-only-plugin-config/load-config.vim
 
 " Mappings
 " Use TAB to move between buffers in normal mode.

@@ -9,7 +9,6 @@ augroup numbertoggle
 augroup END
 
 syntax on
-colorscheme dracula
 set termguicolors
 
 set hidden
@@ -67,5 +66,3 @@ nnoremap <C-k>q :qall<R>
 nnoremap <silent> <Leader>bd :bd<CR>
 nnoremap <silent> <Leader>bD :bd!<CR>
 
-" Source Vim and Neovim common plugins config.
-source $HOME/.vim/common-plugin-config/load-config.vim
