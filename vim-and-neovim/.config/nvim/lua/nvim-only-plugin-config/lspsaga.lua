@@ -12,7 +12,7 @@ keymap("v", "<M-CR>", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true
 keymap("n", "<F2>", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Definition preview
-keymap("n", "gd", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
 keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
@@ -38,15 +38,6 @@ keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
--- Hover doc and definition preview window scrolling
-local action = require("lspsaga.action")
-vim.keymap.set("n", "<C-f>", function()
-    action.smart_scroll_with_saga(1)
-end, { silent = true })
-vim.keymap.set("n", "<C-b>", function()
-    action.smart_scroll_with_saga(-1)
-end, { silent = true })
-
 -- Floaterm
 vim.keymap.set("n", "<leader>tf", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
 vim.keymap.set("t", "<C-esc>", "<C-\\><C-n><cmd>Lspsaga close_floaterm<CR>", { silent = true })
@@ -60,9 +51,6 @@ saga.init_lsp_saga({
     move_in_saga = { prev = '<C-p>', next = '<C-n>'},
 
     diagnostic_header = { " ", " ", " ", "ﴞ " },
-
-    show_diagnostic_source = true,
-    diagnostic_source_bracket = {},
 
     max_preview_lines = 10,
 
@@ -92,6 +80,14 @@ saga.init_lsp_saga({
 	scroll_up = "<C-b>",
     },
 
+    definition_action_keys = {
+      edit = '<C-c>o',
+      vsplit = '<C-c>v',
+      split = '<C-c>i',
+      tabe = '<C-c>t',
+      quit = 'q',
+    },
+
     code_action_keys = {
 	quit = "<esc>",
 	exec = "<CR>",
@@ -99,8 +95,6 @@ saga.init_lsp_saga({
 
     rename_action_quit = "<esc>",
     rename_in_select = true,
-
-    definition_preview_icon = "  ",
 
     symbol_in_winbar = {
 	in_custom = false,
