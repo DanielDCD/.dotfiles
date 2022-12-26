@@ -15,6 +15,17 @@ Set-Alias -Name vi -Value nvim
 
 Set-Alias -Name cat -Value bat
 
+function take {
+
+    param (
+        $name
+    )
+
+    New-Item -Type Directory -Path $name > $null
+    Set-Location $name
+
+}
+
 # Starship prompt
 Invoke-Expression (&starship init powershell)
 
