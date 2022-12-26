@@ -15,3 +15,6 @@ Set-Alias -Name vi -Value nvim
 
 Set-Alias -Name cat -Value bat
 
+# Starship prompt
+Invoke-Expression (&starship init powershell)
+
