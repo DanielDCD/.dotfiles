@@ -46,6 +46,9 @@ endif
 nnoremap <space> <nop>
 let mapleader = " "
 
+" Enter command mode
+nnoremap <leader><leader> :
+
 " Window navigation.
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
