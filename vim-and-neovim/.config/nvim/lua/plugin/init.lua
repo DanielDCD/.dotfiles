@@ -155,7 +155,7 @@ require("lazy").setup({
     version = "v2.*",
     event = "BufReadPre",
     config = function()
-      require "plugin.Bufferline"
+      require "plugin.bufferline"
     end
   },
 
