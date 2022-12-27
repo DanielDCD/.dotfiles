@@ -1,212 +1,229 @@
--- Packer auto installer.
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+-- Lazy.nvim auto installer.
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--single-branch",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
+  })
 end
+vim.opt.runtimepath:prepend(lazypath)
 
-return require('packer').startup(function()
-
-  -- Packer can manage itself.
-  use 'wbthomason/packer.nvim'
+require("lazy").setup({
+  -- Themes.
+  {
+    "Mofiqul/dracula.nvim",
+    config = function()
+      vim.cmd[[colorscheme dracula]]
+    end
+  },
 
   -- Plenary.
-  use 'nvim-lua/plenary.nvim'
-
-  -- Themes.
-  use {
-    'Mofiqul/dracula.nvim',
-    config = 'vim.cmd[[colorscheme dracula]]'
-  }
+  "nvim-lua/plenary.nvim",
 
   -- Icons.
-  use 'kyazdani42/nvim-web-devicons'
+  "kyazdani42/nvim-web-devicons",
 
   -- Language Server Protocol.
-  use {
-    'neovim/nvim-lspconfig',
+  {
+    "neovim/nvim-lspconfig",
     config = function()
-      require 'plugin.nvim-lspconfig'
+      require "plugin.nvim-lspconfig"
     end
-  }
-  use {
-    'williamboman/mason.nvim',
-    requires = 'williamboman/mason-lspconfig.nvim',
+  },
+  {
+    "williamboman/mason.nvim",
+    dependencies = "williamboman/mason-lspconfig.nvim",
     config = function()
-      require 'plugin.mason'
+      require "plugin.mason"
     end
-  }
-  use {
+  },
+  {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      require 'plugin.null-ls'
+      require "plugin.null-ls"
     end
-  }
-  use {
-    'glepnir/lspsaga.nvim',
+  },
+  {
+    "glepnir/lspsaga.nvim",
     branch = "main",
     config = function()
-      require 'plugin.lspsaga'
+      require "plugin.lspsaga"
     end
-  }
-  use {
-    'folke/trouble.nvim',
+  },
+  {
+    "folke/trouble.nvim",
     config = function()
-      require 'plugin.trouble'
+      require "plugin.trouble"
     end
-  }
-  use {
-    'j-hui/fidget.nvim',
+  },
+  {
+    "j-hui/fidget.nvim",
     config = function()
-      require 'plugin.fidget'
+      require "plugin.fidget"
     end
-  }
+  },
 
   -- Code completion.
-  use {
-    'hrsh7th/nvim-cmp',
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "quangnguyen30192/cmp-nvim-ultisnips",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "onsails/lspkind.nvim",
+    },
     config = function()
-      require 'plugin.nvim-cmp'
+      require "plugin.nvim-cmp"
     end
-  }
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'honza/vim-snippets'
-  use {
-    'SirVer/ultisnips',
+  },
+  "honza/vim-snippets",
+  {
+    "SirVer/ultisnips",
     config = function()
       vim.cmd[[source $HOME/.vim/plugin-config/vim-fugitive.vim]]
     end
-  }
-  use 'quangnguyen30192/cmp-nvim-ultisnips'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'onsails/lspkind.nvim'
+  },
 
   -- Treesitter.
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = "BufReadPost",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     config = function()
-      require 'plugin.treesitter'
+      require "plugin.treesitter"
     end
-  }
+  },
 
   -- File management.
-  use {
-    'kyazdani42/nvim-tree.lua',
+  {
+    "kyazdani42/nvim-tree.lua",
     config = function()
-      require 'plugin.nvim-tree'
+      require "plugin.nvim-tree"
     end
-  }
-  use {
-    'X3eRo0/dired.nvim',
-    requires = 'MunifTanjim/nui.nvim',
+  },
+  {
+    "X3eRo0/dired.nvim",
+    dependencies = "MunifTanjim/nui.nvim",
     config = function()
-      require 'plugin.dired'
+      require "plugin.dired"
     end
-  }
+  },
 
   -- Git.
-  use {
-    'lewis6991/gitsigns.nvim',
+  {
+    "lewis6991/gitsigns.nvim",
     config = function()
-      require 'plugin.gitsigns'
+      require "plugin.gitsigns"
     end
-  }
-  use {
-    'tpope/vim-fugitive',
+  },
+  {
+    "tpope/vim-fugitive",
     config = function()
       vim.cmd[[source $HOME/.vim/plugin-config/vim-fugitive.vim]]
     end
-  }
+  },
 
   -- Project management.
-  use {
-    'ahmedkhalf/project.nvim',
+  {
+    "ahmedkhalf/project.nvim",
     config = function()
-      require 'plugin.project'
+      require "plugin.project"
     end
-  }
+  },
 
   -- Start screen.
-  use {
-    'goolord/alpha-nvim',
+  {
+    "goolord/alpha-nvim",
     config = function()
-      require 'plugin.alpha'
+      require "plugin.alpha"
     end
-  }
+  },
 
   -- Bufferline.
-  use {
-    'akinsho/bufferline.nvim',
-    tag = "v2.*",
-    after = 'nvim-lspconfig',
+  {
+    "akinsho/bufferline.nvim",
+    version = "v2.*",
+    event = "BufReadPre",
     config = function()
-      require 'plugin.Bufferline'
+      require "plugin.Bufferline"
     end
-  }
+  },
 
   -- Statusline.
-  use {
-    'feline-nvim/feline.nvim',
+  {
+    "feline-nvim/feline.nvim",
     config = function()
-      require 'plugin.feline'
+      require "plugin.feline"
     end
-  }
+  },
 
   -- Telescope.
-  use {
-    'nvim-telescope/telescope.nvim',
+  {
+    "nvim-telescope/telescope.nvim",
     config = function()
-      require 'plugin.telescope'
+      require "plugin.telescope"
     end
-  }
+  },
 
   -- Terminal.
-  use {
+  {
     "akinsho/toggleterm.nvim",
-    tag = 'v2.*',
+    version = "v2.*",
     config = function()
-      require 'plugin.toggleterm'
+      require "plugin.toggleterm"
     end
-  }
+  },
 
   -- Auto Pairs.
-  use {
-    'windwp/nvim-autopairs',
+  {
+    "windwp/nvim-autopairs",
     config = function()
-      require 'plugin.nvim-autopairs'
+      require "plugin.nvim-autopairs"
     end
-  }
+  },
 
   -- Motion.
-  use {
-    'ggandor/leap.nvim',
-    requires = 'tpope/vim-repeat',
+  {
+    "ggandor/leap.nvim",
+    dependencies = "tpope/vim-repeat",
     config = function()
-      require 'plugin.leap'
+      require "plugin.leap"
     end
-  }
+  },
 
   -- Indentation guides.
-  use {
+  {
     "lukas-reineke/indent-blankline.nvim",
+    event = "BufReadPre",
     config = function()
-      require 'plugin.indent-blankline'
+      require "plugin.indent-blankline"
     end
-  }
+  },
 
   -- vim-mundo.
-  use 'simnalamburt/vim-mundo'
+  "simnalamburt/vim-mundo",
 
   -- editorconfig.
-  use {
-    'editorconfig/editorconfig-vim',
+  {
+    "editorconfig/editorconfig-vim",
     config = function()
       vim.cmd[[source $HOME/.vim/plugin-config/editorconfig-vim.vim]]
     end
-  }
-
-end)
+  },
+}, {
+  -- Lazy.nvim configuration.
+  ui = {
+    border = "double",
+  },
+})
 
