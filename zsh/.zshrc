@@ -25,6 +25,9 @@ alias cat="bat"
 
 alias vi="nvim"
 
+# Make vi (Neovim) the default text editor
+export EDITOR="vi"
+
 # Autosuggestions
 source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
