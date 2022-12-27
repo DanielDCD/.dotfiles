@@ -181,7 +181,8 @@ local buttons = {
         button("SPC j", "  Jump List", "<cmd>Telescope jumplist<CR>"),
         button("SPC g", "  Live grep", "<cmd>Telescope live_grep<CR>"),
         button("SPC p", "  Projects", "<cmd>Telescope projects<CR>"),
-        button("SPC u", "  Update plugins", "<cmd>PackerSync<CR>"),
+        button("SPC l", "  Manage plugins", "<cmd>Lazy<CR>"),
+        button("SPC u", "  Update plugins", "<cmd>Lazy update<CR>"),
         button("q", "  Quit", "<cmd>qa<CR>")
     },
     position = "center"
