@@ -15,7 +15,17 @@ local options = {
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",
     middle_mouse_command = nil,
-    offsets = {{ filetype = "NvimTree", text = "Files", highlight = "Directory"}},
+    offsets = {
+      {
+	filetype = "NvimTree",
+	text = "Files",
+	highlight = "Directory",
+      }, {
+	filetype = "neo-tree",
+	text = "Neo-tree",
+	highlight = "Directory",
+      }
+    },
     indicator = {
 	icon = '▎',
 	style = 'icon'

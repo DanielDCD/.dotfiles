@@ -27,6 +27,9 @@ require("lazy").setup({
   -- Icons.
   "kyazdani42/nvim-web-devicons",
 
+  -- Nui
+  "MunifTanjim/nui.nvim",
+
   -- Language Server Protocol.
   {
     "neovim/nvim-lspconfig",
@@ -106,14 +109,14 @@ require("lazy").setup({
 
   -- File management.
   {
-    "kyazdani42/nvim-tree.lua",
+    "nvim-neo-tree/neo-tree.nvim",
+    version = "v2.x",
     config = function()
-      require "plugin.nvim-tree"
+      require "plugin.neo-tree"
     end
   },
   {
     "X3eRo0/dired.nvim",
-    dependencies = "MunifTanjim/nui.nvim",
     config = function()
       require "plugin.dired"
     end
