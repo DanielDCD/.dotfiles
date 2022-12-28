@@ -156,7 +156,7 @@ require("lazy").setup({
   {
     "akinsho/bufferline.nvim",
     version = "v2.*",
-    event = "BufReadPre",
+    event = "VimEnter",
     config = function()
       require "plugin.bufferline"
     end
