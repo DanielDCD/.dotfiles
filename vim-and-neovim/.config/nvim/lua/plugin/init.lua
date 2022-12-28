@@ -162,6 +162,18 @@ require("lazy").setup({
     end
   },
 
+  -- Window management
+  {
+    "anuvyklack/windows.nvim",
+    dependencies = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim",
+    },
+    config = function()
+      require "plugin.windows"
+    end
+  },
+
   -- Statusline.
   {
     "feline-nvim/feline.nvim",
