@@ -133,10 +133,10 @@ keys = [
     ),
 
     # Flip layout for BSP.
-    Key([mod, "mod5"], "k", lazy.layout.flip_up()),
-    Key([mod, "mod5"], "j", lazy.layout.flip_down()),
-    Key([mod, "mod5"], "l", lazy.layout.flip_right()),
-    Key([mod, "mod5"], "h", lazy.layout.flip_left()),
+    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
+    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
+    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
