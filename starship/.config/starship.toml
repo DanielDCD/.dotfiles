@@ -28,7 +28,7 @@ $cmd_duration\
 [](fg:yellow bg:green)\
 $time\
 [ ](fg:green)
-$character
+$character\
 """
 
 add_newline = true
