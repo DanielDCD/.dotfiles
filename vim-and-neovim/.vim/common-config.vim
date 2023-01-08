@@ -36,7 +36,7 @@ if (has("win32"))
   vnoremap ´´ <Esc>
   cnoremap <silent> ´´ <C-left>"<Esc> 
   nnoremap ´´ :
-else
+elseif (has("linux"))
   inoremap ´ <Esc>
   vnoremap ´ <Esc>
   cnoremap <silent> ´ <C-left>"<Esc> 
