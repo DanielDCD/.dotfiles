@@ -216,6 +216,14 @@ require("lazy").setup({
     end
   },
 
+  -- Highlighting
+  {
+    "RRethy/vim-illuminate",
+    config = function()
+      require "plugin.vim-illuminate"
+    end
+  },
+
   -- Indentation guides.
   {
     "lukas-reineke/indent-blankline.nvim",
