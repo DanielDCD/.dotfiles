@@ -27,6 +27,12 @@ if (has("clipboard"))
   set clipboard=unnamed
 endif
 
+" Identation
+filetype indent on
+filetype plugin indent on
+set smartindent
+set autoindent
+
 " Mouse
 set mouse=a
 
