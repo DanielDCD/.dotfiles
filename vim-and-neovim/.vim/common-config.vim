@@ -30,6 +30,9 @@ endif
 " Mouse
 set mouse=a
 
+" Number format
+set nrformats+=unsigned
+
 " Spanish acute accent mappings.
 if (has("win32"))
   inoremap ´´ <Esc>
