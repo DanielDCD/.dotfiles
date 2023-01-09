@@ -33,6 +33,7 @@ require("lazy").setup({
   -- Language Server Protocol.
   {
     "neovim/nvim-lspconfig",
+    priority = 51,
     config = function()
       require "plugin.nvim-lspconfig"
     end
