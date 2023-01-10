@@ -11,6 +11,9 @@ local sources = {
 
   -- Formatters
   formatting.stylua,
+  formatting.autopep8,
+  formatting.autoflake,
+  formatting.isort,
 
 }
 
