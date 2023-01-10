@@ -40,6 +40,12 @@ mason_lspconfig.setup_handlers {
 		Lua = {
 		    diagnostics = {
 			globals = { "vim" }
+		    },
+		    workspace = {
+		        library = {
+			    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+			    [vim.fn.stdpath("config") .. "/lua"] = true,
+			}
 		    }
 		}
 	    }
