@@ -228,7 +228,7 @@ require("lazy").setup({
   -- Indentation guides.
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPre",
+    event = "VimEnter",
     config = function()
       require "plugin.indent-blankline"
     end
