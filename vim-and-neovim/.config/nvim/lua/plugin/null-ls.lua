@@ -14,6 +14,7 @@ local sources = {
   formatting.autopep8,
   formatting.autoflake,
   formatting.isort,
+  formatting.beautysh,
 
 }
 
