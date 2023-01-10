@@ -234,6 +234,14 @@ require("lazy").setup({
     end
   },
 
+  -- Scrollbar
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require "plugin.nvim-scrollbar"
+    end
+  },
+
   -- vim-mundo.
   "simnalamburt/vim-mundo",
 
