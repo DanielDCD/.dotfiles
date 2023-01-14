@@ -1,6 +1,9 @@
 " Source Vim and Neovim common config.
 source $HOME/.vim/common-config.vim
 
+" Global statusline
+set laststatus=3
+
 " Highlight yanked text
 augroup highlight_yank
   autocmd!

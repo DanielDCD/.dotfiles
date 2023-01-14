@@ -177,9 +177,10 @@ require("lazy").setup({
 
   -- Statusline.
   {
-    "feline-nvim/feline.nvim",
+    "rebelot/heirline.nvim",
+    event = "UIEnter",
     config = function()
-      require "plugin.feline"
+      require "plugin.heirline"
     end
   },
 

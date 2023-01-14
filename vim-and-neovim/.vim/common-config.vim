@@ -15,6 +15,8 @@ set hidden
 
 set showcmd
 
+set noshowmode
+
 " Search options.
 set ignorecase smartcase
 set hlsearch incsearch
