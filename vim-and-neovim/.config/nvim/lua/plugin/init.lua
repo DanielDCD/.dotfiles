@@ -53,10 +53,10 @@ require("lazy").setup({
   },
   {
     "glepnir/lspsaga.nvim",
-    branch = "main",
+    event = {'UIEnter', 'BufRead', 'BufReadPost'},
     config = function()
       require "plugin.lspsaga"
-    end
+    end,
   },
   {
     "folke/trouble.nvim",

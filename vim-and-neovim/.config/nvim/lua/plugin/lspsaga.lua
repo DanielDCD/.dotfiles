@@ -1,119 +1,104 @@
 local keymap = vim.keymap.set
 local saga = require('lspsaga')
 
+-- Colorscheme
+local colors = require('dracula').colors()
+
 -- Lps finder
-keymap("n", "gñ", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+keymap('n', 'gñ', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
 
 -- Code action
-keymap("n", "<M-CR>", "<cmd>Lspsaga code_action<CR>", { silent = true })
-keymap("v", "<M-CR>", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true })
+keymap('n', '<M-CR>', '<cmd>Lspsaga code_action<CR>', { silent = true })
 
 -- Rename
-keymap("n", "<F2>", "<cmd>Lspsaga rename<CR>", { silent = true })
+keymap('n', '<F2>', '<cmd>Lspsaga rename<CR>', { silent = true })
 
 -- Definition preview
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+keymap('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', { silent = true })
+
+-- Go to definition
+keymap('n', 'gD', '<cmd>Lspsaga goto_definition<CR>', { silent = true })
 
 -- Show line diagnostics
-keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+keymap('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<CR>', { silent = true })
 
 -- Show cursor diagnostic
-keymap("n", "gc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+keymap('n', 'gc', '<cmd>Lspsaga show_cursor_diagnostics<CR>', { silent = true })
 
--- Diagnsotic jump can use `<c-o>` to jump back
-keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
-keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+-- Show buffer diagnostic
+keymap('n', 'gB', '<cmd>Lspsaga show_buf_diagnostics<CR>', { silent = true })
+
+-- Diagnsotic jump
+keymap('n', '[e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
+keymap('n', ']e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
 
 -- Only jump to error
-keymap("n", "[E", function()
-  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+keymap('n', '[E', function()
+  require('lspsaga.diagnostic').goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
-keymap("n", "]E", function()
-  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+keymap('n', ']E', function()
+  require('lspsaga.diagnostic').goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
+keymap('n', '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
 
 -- Floaterm
-vim.keymap.set("n", "<leader>tf", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
-vim.keymap.set("t", "<C-esc>", "<C-\\><C-n><cmd>Lspsaga close_floaterm<CR>", { silent = true })
+keymap({ 'n' }, '<leader>tf', '<cmd>Lspsaga term_toggle<CR>')
+
+-- Call hierarchy
+keymap('n', '<Leader>ci', '<cmd>Lspsaga incoming_calls<CR>')
+keymap('n', '<Leader>co', '<cmd>Lspsaga outgoing_calls<CR>')
 
 -- Options
-saga.init_lsp_saga({
-    border_style = "single",
-
-    saga_winblend = 0,
-
-    move_in_saga = { prev = '<C-p>', next = '<C-n>'},
-
-    diagnostic_header = { " ", " ", " ", "ﴞ " },
-
-    max_preview_lines = 10,
-
-    code_action_icon = " ",
-    code_action_num_shortcut = true,
-    code_action_lightbulb = {
-	enable = true,
-	sign = true,
-	enable_in_insert = true,
-	sign_priority = 20,
-	virtual_text = true,
+saga.setup({
+  code_action = {
+    keys = {
+      quit = '<Esc>',
     },
-
-    finder_icons = {
-      def = '  ',
-      ref = '諭 ',
-      link = '  ',
+  },
+  rename = {
+    quit = '<Esc>',
+  },
+  outline = {
+    win_width = 30,
+    auto_close = true,
+    keys = {
+      expand_collapse = '<CR>',
     },
-    finder_request_timeout = 1500,
-    finder_action_keys = {
-	open = "<CR>",
-	vsplit = "s",
-	split = "i",
-	tabe = "t",
-	quit = "q",
-	scroll_down = "<C-f>",
-	scroll_up = "<C-b>",
+  },
+  symbol_in_winbar = {
+    enable = false,
+  },
+  definition = {
+    quit = '<C-q>',
+  },
+  callhierarchy = {
+    keys = {
+      quit = '<C-q>'
+    }
+  },
+  ui = {
+    border = 'single',
+    preview = ' ',
+    code_action = '',
+    diagnostic = 'ﴫ',
+    colors = {
+      normal_bg = colors.bg,
+      title_bg = colors.purple,
+      red = colors.red,
+      magenta = colors.pink,
+      orange = colors.orange,
+      yellow = colors.yellow,
+      green = colors.green,
+      cyan = colors.cyan,
+      blue = colors.bright_blue,
+      purple = colors.purple,
+      white = colors.white,
+      black = colors.black,
     },
-
-    definition_action_keys = {
-      edit = '<C-c>o',
-      vsplit = '<C-c>v',
-      split = '<C-c>i',
-      tabe = '<C-c>t',
-      quit = 'q',
-    },
-
-    code_action_keys = {
-	quit = "<esc>",
-	exec = "<CR>",
-    },
-
-    rename_action_quit = "<esc>",
-    rename_in_select = true,
-
-    symbol_in_winbar = {
-	in_custom = false,
-	enable = false,
-	separator = ' ',
-	show_file = true,
-	click_support = false,
-    },
-
-    show_outline = {
-      win_position = 'right',
-      win_with = '',
-      win_width = 30,
-      auto_enter = true,
-      auto_preview = true,
-      virt_text = '┃',
-      auto_refresh = true,
-    },
-
-    custom_kind = {},
+  },
 })
-
