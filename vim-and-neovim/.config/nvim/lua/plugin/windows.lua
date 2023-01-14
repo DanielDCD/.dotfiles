@@ -2,7 +2,11 @@ vim.o.winwidth = 10
 vim.o.winminwidth = 10
 vim.o.equalalways = false
 
-require('windows').setup()
+require('windows').setup({
+  autowidth = {
+    enable = false,
+  }
+})
 
 vim.keymap.set('n', '<C-w>m', '<cmd>WindowsMaximize<CR>')
 vim.keymap.set('n', '<C-w>,', '<cmd>WindowsMaximizeVertically<CR>')
