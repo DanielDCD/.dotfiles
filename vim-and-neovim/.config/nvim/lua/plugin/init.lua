@@ -184,6 +184,17 @@ require("lazy").setup({
     end
   },
 
+  -- Winbar
+{"utilyre/barbecue.nvim",
+  dependencies = {
+    "neovim/nvim-lspconfig",
+    "SmiteshP/nvim-navic",
+    },
+    event = "UIEnter",
+    config = function()
+      require "plugin.barbecue"
+    end
+  },
   -- Telescope.
   {
     "nvim-telescope/telescope.nvim",
