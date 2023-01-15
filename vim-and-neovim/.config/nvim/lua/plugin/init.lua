@@ -254,6 +254,14 @@ require("lazy").setup({
     end
   },
 
+  -- Color codes
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require "plugin.nvim-colorizer"
+    end
+  },
+
   -- vim-mundo.
   "simnalamburt/vim-mundo",
 
