@@ -59,6 +59,7 @@ endif
 
 nnoremap <space> <nop>
 let mapleader = " "
+let maplocalleader = "ç"
 
 " Enter command mode
 nnoremap <leader><leader> :
