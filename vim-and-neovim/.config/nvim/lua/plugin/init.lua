@@ -277,5 +277,9 @@ require("lazy").setup({
   ui = {
     border = "double",
   },
+  install = {
+    missing = false,
+    colorscheme = { "dracula" },
+  }
 })
 
