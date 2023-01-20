@@ -13,4 +13,5 @@ require('barbecue').setup({
   symbols = {
     separator = '',
   },
+  attach_navic = false,
 })

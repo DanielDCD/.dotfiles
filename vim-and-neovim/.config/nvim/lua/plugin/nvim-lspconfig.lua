@@ -6,7 +6,14 @@ mason_lspconfig.setup()
 mason_lspconfig.setup_handlers {
 
     function (server_name) -- Default handler
-	lspconfig[server_name].setup {}
+	lspconfig[server_name].setup {
+		on_attach = function(client, bufnr)
+
+		    if client.server_capabilities["documentSymbolProvider"] then
+			      require("nvim-navic").attach(client, bufnr)
+		    end
+	    end
+	}
     end,
 
     ["sumneko_lua"] = function ()
