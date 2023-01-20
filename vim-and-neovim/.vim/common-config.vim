@@ -83,3 +83,11 @@ nnoremap <C-k>q :qall<R>
 nnoremap <silent> <Leader>bd :bd<CR>
 nnoremap <silent> <Leader>bD :bd!<CR>
 
+" Make current file
+nnoremap <silent> <F29> :w \| :make<CR>
+
+" Code running
+autocmd FileType lua set makeprg=lua\ %
+autocmd FileType python set makeprg=python3\ %
+autocmd FileType julia set makeprg=julia\ %
+
