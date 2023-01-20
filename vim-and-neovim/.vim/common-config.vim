@@ -23,7 +23,6 @@ set hlsearch incsearch
 
 " Undo
 set undofile
-set undodir=~/.vim/undo
 
 " Languae
 lang en_GB
