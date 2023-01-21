@@ -25,7 +25,7 @@ set hlsearch incsearch
 set undofile
 
 " Languae
-lang en_GB
+lang en_US.UTF-8
 
 " Clipboard
 if (has("clipboard"))
