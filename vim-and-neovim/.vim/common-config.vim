@@ -76,9 +76,9 @@ xnoremap J :move '>+1<CR>gv-gv
 
 " Save and quit.
 nnoremap <C-s> :w<CR>
-nnoremap <C-k>s :wall<CR>
+nnoremap <C-M-S> :wall<CR>
 nnoremap <C-q> :q<CR>
-nnoremap <C-k>q :qall<R>
+nnoremap <C-M-S>q :qall<CR>
 
 " Close current buffer.
 nnoremap <silent> <Leader>bd :bd<CR>
