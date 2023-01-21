@@ -13,3 +13,4 @@ nnoremap <leader>gb :Git branch
 nnoremap <leader>gr :Git remote 
 nnoremap <leader>gm :Git merge 
 nnoremap <leader>grb :Git rebase 
+

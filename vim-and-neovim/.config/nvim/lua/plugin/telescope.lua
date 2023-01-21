@@ -1,15 +1,22 @@
+local telescope_ok, telescope = pcall(require, 'telescope')
+if not telescope_ok then
+  return
+end
+
 -- Options
-require('telescope').setup{
+local options = {
   defaults = {
     mappings = {
       i = {
-        ["<C-h>"] = "which_key"
-      }
-    }
+        ['<C-h>'] = 'which_key',
+      },
+    },
   },
   pickers = {},
-  extensions = {}
+  extensions = {},
 }
+
+telescope.setup(options)
 
 -- Shortcuts
 vim.cmd([[

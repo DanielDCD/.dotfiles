@@ -1,7 +1,6 @@
 -- Options
-local present, bufferline = pcall(require, "bufferline")
-
-if not present then
+local bufferline_ok, bufferline = pcall(require, "bufferline")
+if not bufferline_ok then
    return
 end
 
@@ -46,15 +45,6 @@ local options = {
     separator_style = "slant",
     always_show_bufferline = true,
     diagnostics = "nvim_lsp" or "coc",
-    diagnostics_indicator = function(count, level, diagnostics_dict, context)
-      local s = " "
-      for e, n in pairs(diagnostics_dict) do
-        local sym = e == "error" and " "
-          or (e == "warning" and " " or "" )
-        s = s .. n .. sym
-      end
-      return s
-    end,
     themable = true,
     custom_areas = {
 	  right = function()

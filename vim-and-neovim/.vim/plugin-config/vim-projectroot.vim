@@ -14,3 +14,4 @@ function! <SID>AutoProjectRootCD()
   endtry
 endfunction
 autocmd BufEnter * call <SID>AutoProjectRootCD()
+

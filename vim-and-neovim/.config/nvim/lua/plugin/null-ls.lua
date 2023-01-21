@@ -1,4 +1,7 @@
-local null_ls = require("null-ls")
+local null_ls_ok, null_ls = pcall(require, 'null-ls')
+if not null_ls_ok then
+  return
+end
 
 -- Sources
 local code_actions = null_ls.builtins.code_actions
@@ -25,7 +28,6 @@ null_ls.setup({
 })
 
 -- Functions
-vim.api.nvim_create_user_command("FormatBuffer", function()
+vim.api.nvim_create_user_command('FormatBuffer', function()
   vim.lsp.buf.format()
 end, { nargs = 0 })
-
