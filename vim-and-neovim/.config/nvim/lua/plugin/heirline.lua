@@ -1,4 +1,8 @@
-local heirline = require('heirline')
+local heirline_ok, heirline = pcall(require, 'heirline')
+if not heirline_ok then
+  return
+end
+
 local utils = require('heirline.utils')
 local conditions = require('heirline.conditions')
 local devicons = require('nvim-web-devicons')

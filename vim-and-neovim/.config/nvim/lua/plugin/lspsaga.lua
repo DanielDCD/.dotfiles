@@ -78,8 +78,8 @@ saga.setup({
   },
   callhierarchy = {
     keys = {
-      quit = '<C-q>'
-    }
+      quit = '<C-q>',
+    },
   },
   ui = {
     border = 'single',
