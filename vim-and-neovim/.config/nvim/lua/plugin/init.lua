@@ -165,6 +165,9 @@ require("lazy").setup({
 
   -- Window management
   {
+    'dstein64/vim-win',
+  },
+  {
     "anuvyklack/windows.nvim",
     dependencies = {
       "anuvyklack/middleclass",

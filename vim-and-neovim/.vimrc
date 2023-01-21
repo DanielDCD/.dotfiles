@@ -36,6 +36,9 @@ Plug 'mhinz/vim-startify'
 "Airline.
 Plug 'vim-airline/vim-airline'
 
+" Window management
+Plug 'dstein64/vim-win'
+
 " fzf.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/gv.vim'
