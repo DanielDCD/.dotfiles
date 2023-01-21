@@ -27,8 +27,9 @@ set undofile
 " Languae
 lang en_GB
 
+" Clipboard
 if (has("clipboard"))
-  set clipboard=unnamed
+  set clipboard=unnamedplus
 endif
 
 " Identation
