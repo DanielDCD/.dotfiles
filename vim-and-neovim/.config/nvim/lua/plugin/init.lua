@@ -266,6 +266,15 @@ require('lazy').setup({
     end,
   },
 
+  -- Latex
+  {
+    'lervag/vimtex',
+    ft = 'tex',
+    config = function()
+      vim.cmd([[source $HOME/.vim/plugin-config/vimtex.vim]])
+    end,
+  },
+
   -- vim-mundo.
   'simnalamburt/vim-mundo',
 

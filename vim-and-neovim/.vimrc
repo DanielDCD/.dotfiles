@@ -58,6 +58,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 
+" Latex
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 " Load plugin config
