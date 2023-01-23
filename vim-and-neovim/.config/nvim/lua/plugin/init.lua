@@ -270,6 +270,9 @@ require('lazy').setup({
   {
     'lervag/vimtex',
     ft = 'tex',
+    dependencies = {
+      'KeitaNakamura/tex-conceal.vim',
+    },
     config = function()
       vim.cmd([[source $HOME/.vim/plugin-config/vimtex.vim]])
     end,

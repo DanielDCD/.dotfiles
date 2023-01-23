@@ -9,12 +9,6 @@ endif
 " options
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
-if has('nvim')
-  let g:vimtex_syntax_enabled = 0
-endif
 
 " Compiler
 let g:vimtex_compiler_method = 'tectonic'
@@ -26,6 +20,11 @@ let g:vimtex_compiler_tectonic = {
 \   '--synctex'
 \ ],
 \}
+
+" Conceal
+set conceallevel=2
+let g:tex_conceal="abdgm"
+let g:tex_conceal_frac=1
 
 " Syntax
 autocmd FileType tex syntax on
