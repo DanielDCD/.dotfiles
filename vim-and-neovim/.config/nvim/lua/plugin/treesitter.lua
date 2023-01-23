@@ -7,6 +7,7 @@ local options = {
   highlight = {
     enable = true,
     use_languagetree = true,
+    disable = { 'latex' },
   },
   auto_install = true,
   incremental_selection = {

@@ -27,6 +27,9 @@ let g:vimtex_compiler_tectonic = {
 \ ],
 \}
 
+" Syntax
+autocmd FileType tex syntax on
+
 " Mappings
 autocmd FileType tex nnoremap <buffer> <localleader>c <Cmd>update<CR><Cmd>VimtexCompile<CR>
 autocmd FileType tex nnoremap <buffer> <localleader>v <Cmd>VimtexView<CR>
