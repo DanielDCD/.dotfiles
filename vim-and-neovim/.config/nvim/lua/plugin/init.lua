@@ -91,7 +91,7 @@ require('lazy').setup({
   {
     'SirVer/ultisnips',
     config = function()
-      vim.cmd([[source $HOME/.vim/plugin-config/vim-fugitive.vim]])
+      vim.cmd([[source $HOME/.vim/plugin-config/ultisnips.vim]])
     end,
   },
 
