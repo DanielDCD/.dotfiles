@@ -87,7 +87,6 @@ require('lazy').setup({
       require('plugin.nvim-cmp')
     end,
   },
-  'honza/vim-snippets',
   {
     'SirVer/ultisnips',
     config = function()

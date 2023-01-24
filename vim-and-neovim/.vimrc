@@ -15,7 +15,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
-Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
 " Syntax checking.
