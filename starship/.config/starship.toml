@@ -87,7 +87,7 @@ style = "fg:black bg:cyan"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [conda]
-symbol = "🅒 "
+symbol = "󰯳 "
 style = "fg:black bg:cyan"
 format = "[$symbol$environment ]($style)"
 ignore_base = false
