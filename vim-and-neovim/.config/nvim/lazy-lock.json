@@ -11,7 +11,7 @@
   "dired.nvim": { "branch": "main", "commit": "66db3d9900590f25127e33a01e64c29cb4b53ca4" },
   "dracula.nvim": { "branch": "main", "commit": "9db13329e205aaee089e25be8113bd1faeca674e" },
   "editorconfig-vim": { "branch": "master", "commit": "7f4e4dfc58c480d154116614e616d90aac77204d" },
-  "fidget.nvim": { "branch": "main", "commit": "f1c375ba68839eaa4a65efdf2aa078c0da0548fe" },
+  "fidget.nvim": { "branch": "main", "commit": "0ba1e16d07627532b6cae915cc992ecac249fb97" },
   "gitsigns.nvim": { "branch": "main", "commit": "5a04466685008f29c71fa5ec25d421deb1c83fea" },
   "heirline.nvim": { "branch": "master", "commit": "76136ccd93ed608e8109762f032cf1118981ebbd" },
   "indent-blankline.nvim": { "branch": "master", "commit": "4541d690816cb99a7fc248f1486aa87f3abce91c" },

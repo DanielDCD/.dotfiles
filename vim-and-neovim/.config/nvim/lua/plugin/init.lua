@@ -69,6 +69,7 @@ require('lazy').setup({
     config = function()
       require('plugin.fidget')
     end,
+    tag = 'legacy',
   },
 
   -- Code completion.
