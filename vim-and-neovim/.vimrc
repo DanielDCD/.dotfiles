@@ -16,6 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
 Plug 'SirVer/ultisnips'
+Plug 'DanielDCD/snippets' " My custom snippets.
 
 " Syntax checking.
 Plug 'vim-syntastic/syntastic'

@@ -88,6 +88,10 @@ require('lazy').setup({
     end,
   },
   {
+    'DanielDCD/snippets', -- My custom snippets
+    dev = true,
+  },
+  {
     'SirVer/ultisnips',
     config = function()
       vim.cmd([[source $HOME/.vim/plugin-config/ultisnips.vim]])
@@ -295,5 +299,8 @@ require('lazy').setup({
   install = {
     missing = false,
     colorscheme = { 'dracula' },
+  },
+  dev = {
+    path = '~/.vim-plugin-development',
   },
 })
