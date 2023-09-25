@@ -154,13 +154,11 @@ require('lazy').setup({
     end,
   },
 
-  -- Bufferline.
+  -- Tabline.
   {
-    'akinsho/bufferline.nvim',
-    version = 'v2.*',
-    event = 'VimEnter',
+    'nanozuki/tabby.nvim',
     config = function()
-      require('plugin.bufferline')
+      require('plugin.tabby')
     end,
   },
 

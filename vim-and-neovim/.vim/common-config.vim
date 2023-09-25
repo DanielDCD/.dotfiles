@@ -80,9 +80,20 @@ nnoremap <C-M-S> :wall<CR>
 nnoremap <C-q> :q<CR>
 nnoremap <C-M-S>q :qall<CR>
 
+" Use TAB to move between buffers in normal mode.
+nnoremap <silent> <Tab> :bnext<CR>
+nnoremap <silent> <S-Tab> :bprevious<CR>
+
 " Close current buffer.
 nnoremap <silent> <Leader>bd :bd<CR>
 nnoremap <silent> <Leader>bD :bd!<CR>
+
+" Tab management
+nnoremap <leader>tn :$tabnew<CR>
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>to :tabonly<CR>
+nnoremap <leader>tmp :-tabmove<CR>
+nnoremap <leader>tmn :+tabmove<CR>
 
 " Make current file
 nnoremap <silent> <F29> :w \| :make<CR>

@@ -72,10 +72,6 @@ source $HOME/.vim/common-config.vim
 
 " Mappings
 
-" Use TAB to move between buffers in normal mode.
-nnoremap <silent> <Tab> :bnext<CR>
-nnoremap <silent> <S-Tab> :bprevious<CR>
-
 " Eliminate <Esc> key delay.
 set timeoutlen=1000 ttimeoutlen=0
 

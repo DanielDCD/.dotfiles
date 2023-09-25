@@ -2,7 +2,7 @@ local colors = require('dracula').colors()
 
 require('barbecue').setup({
   theme = {
-    normal = { bg = colors.bg },
+    normal = { bg = colors.selection },
     separator = { fg = colors.purple },
     modified = { fg = colors.bright_white },
     dirname = { fg = colors.purple },
