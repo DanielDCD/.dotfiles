@@ -15,15 +15,21 @@ source $ZSH/oh-my-zsh.sh
 alias c=clear
 alias cls=clear
 
-alias ls="exa --icons"
-alias ll="exa -l --icons"
-alias la="exa -a --icons"
-alias lla="exa -al --icons"
-alias tree="exa -T --icons"
+if command -v exa &> /dev/null; then
+    alias ls="exa --icons"
+    alias ll="exa -l --icons"
+    alias la="exa -a --icons"
+    alias lla="exa -al --icons"
+    alias tree="exa -T --icons"
+fi
 
-alias cat="bat"
+if command -v bat &> /dev/null; then
+    alias cat="bat"
+fi
 
-alias vi="nvim"
+if command -v nvim &> /dev/null; then
+    alias vi="nvim"
+fi
 
 # Make vi (Neovim) the default text editor
 export EDITOR="vi"
