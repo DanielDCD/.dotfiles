@@ -15,12 +15,12 @@ source $ZSH/oh-my-zsh.sh
 alias c=clear
 alias cls=clear
 
-if command -v exa &> /dev/null; then
-    alias ls="exa --icons"
-    alias ll="exa -l --icons"
-    alias la="exa -a --icons"
-    alias lla="exa -al --icons"
-    alias tree="exa -T --icons"
+if command -v eza &> /dev/null; then
+    alias ls="eza --icons"
+    alias ll="eza -l --icons"
+    alias la="eza -a --icons"
+    alias lla="eza -al --icons"
+    alias tree="eza -T --icons"
 fi
 
 if command -v bat &> /dev/null; then
