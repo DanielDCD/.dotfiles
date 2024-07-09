@@ -46,12 +46,6 @@ require('lazy').setup({
     end,
   },
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    config = function()
-      require('plugin.null-ls')
-    end,
-  },
-  {
     'glepnir/lspsaga.nvim',
     event = { 'UIEnter', 'BufRead', 'BufReadPost' },
     config = function()
