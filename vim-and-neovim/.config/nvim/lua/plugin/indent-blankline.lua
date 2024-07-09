@@ -1,11 +1,36 @@
-local indent_blankline_ok, indent_blankline = pcall(require, 'indent_blankline')
-if not indent_blankline_ok then
+local ibl_ok, ibl = pcall(require, 'ibl')
+if not ibl_ok then
   return
 end
 
-local options = {
-  show_current_context = true,
-  show_current_context_start = true,
+local highlight = {
+  'RainbowRed',
+  'RainbowYellow',
+  'RainbowBlue',
+  'RainbowOrange',
+  'RainbowGreen',
+  'RainbowViolet',
+  'RainbowCyan',
 }
 
-indent_blankline.setup(options)
+local colors = require('dracula').colors()
+
+local hooks = require('ibl.hooks')
+
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+  vim.api.nvim_set_hl(0, 'RainbowRed', { fg = colors.red })
+  vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = colors.yellow })
+  vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = colors.bright_blue })
+  vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = colors.orange })
+  vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = colors.green })
+  vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = colors.purple })
+  vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = colors.cyan })
+end)
+
+require('ibl').setup({ indent = { highlight = highlight } })
+
+local options = {
+  indent = { highlight = highlight },
+}
+
+ibl.setup(options)

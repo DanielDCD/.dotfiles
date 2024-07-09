@@ -243,7 +243,7 @@ require('lazy').setup({
   -- Indentation guides.
   {
     'lukas-reineke/indent-blankline.nvim',
-    event = 'VimEnter',
+    main = 'ibl',
     config = function()
       require('plugin.indent-blankline')
     end,
