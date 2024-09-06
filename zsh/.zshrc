@@ -31,6 +31,10 @@ if command -v nvim &> /dev/null; then
     alias vi="nvim"
 fi
 
+if command -v rg &> /dev/null; then
+    alias grep="rg"
+fi
+
 # Make vi (Neovim) the default text editor
 export EDITOR="vi"
 
