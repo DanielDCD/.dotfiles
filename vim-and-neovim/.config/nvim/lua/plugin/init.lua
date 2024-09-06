@@ -13,11 +13,10 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require('lazy').setup({
-  -- Themes.
   {
-    'Mofiqul/dracula.nvim',
+    'catppuccin/nvim',
     config = function()
-      vim.cmd([[colorscheme dracula]])
+      require('plugin.catppuccin')
     end,
   },
 
@@ -268,6 +267,6 @@ require('lazy').setup({
   },
   install = {
     missing = false,
-    colorscheme = { 'dracula' },
+    colorscheme = { 'catppuccin-macchiato' },
   },
 })

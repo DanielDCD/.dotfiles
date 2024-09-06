@@ -5,15 +5,16 @@ end
 
 vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 
-local colors = require('dracula').colors()
+local colors = require("catppuccin.palettes").get_palette("macchiato")
+
 local theme = {
-  fill = { bg = colors.black },
-  head = { bg = colors.purple, fg = colors.black, style = 'bold' },
-  current_tab = { bg = colors.green, fg = colors.black, style = 'bold' },
-  tab = { bg = colors.purple, fg = colors.black },
+  fill = { bg = colors.crust },
+  head = { bg = colors.mauve, fg = colors.crust, style = 'bold' },
+  current_tab = { bg = colors.green, fg = colors.crust, style = 'bold' },
+  tab = { bg = colors.mauve, fg = colors.crust },
   win = { bg = colors.bg, fg = colors.white },
   current_win = { bg = colors.selection, fg = colors.bright_white, style = 'bold' },
-  tail = { bg = colors.purple, fg = colors.black, style = 'bold' },
+  tail = { bg = colors.mauve, fg = colors.crust, style = 'bold' },
 }
 
 require('tabby.tabline').set(function(line)

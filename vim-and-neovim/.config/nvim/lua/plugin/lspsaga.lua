@@ -1,9 +1,6 @@
 local keymap = vim.keymap.set
 local saga = require('lspsaga')
 
--- Colorscheme
-local colors = require('dracula').colors()
-
 -- Lps finder
 keymap('n', 'gñ', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
 
@@ -82,23 +79,6 @@ saga.setup({
     },
   },
   ui = {
-    border = 'single',
-    preview = ' ',
-    code_action = '',
-    diagnostic = 'ﴫ',
-    colors = {
-      normal_bg = colors.bg,
-      title_bg = colors.purple,
-      red = colors.red,
-      magenta = colors.pink,
-      orange = colors.orange,
-      yellow = colors.yellow,
-      green = colors.green,
-      cyan = colors.cyan,
-      blue = colors.bright_blue,
-      purple = colors.purple,
-      white = colors.white,
-      black = colors.black,
-    },
+    kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
   },
 })

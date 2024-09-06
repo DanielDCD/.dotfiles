@@ -9,7 +9,7 @@ local devicons = require('nvim-web-devicons')
 local os_sep = package.config:sub(1, 1)
 
 -- Colors
-local colors = require('dracula').colors()
+local colors = require("catppuccin.palettes").get_palette("macchiato")
 heirline.load_colors(colors)
 
 -- Separators
@@ -107,7 +107,7 @@ local ModeArea = {
   Snippets,
   hl = function(self)
     local mode = self.mode:sub(1, 1)
-    return { fg = 'black', bg = self.mode_colors[mode], bold = true }
+    return { fg = 'crust', bg = self.mode_colors[mode], bold = true }
   end,
 }
 ModeArea = utils.surround({ nil, seps.lower.right }, nil, ModeArea)
@@ -119,7 +119,7 @@ local GitBranch = {
   provider = function(self)
     return '  ' .. self.status_dict.head
   end,
-  hl = { fg = 'orange', bold = true },
+  hl = { fg = 'peach', bold = true },
 }
 
 -- Lines added
@@ -146,7 +146,7 @@ local GitChanged = {
     local count = self.status_dict.changed or 0
     return count > 0 and (' 柳' .. count)
   end,
-  hl = { fg = 'cyan' },
+  hl = { fg = 'sapphire' },
 }
 
 -- Git metrics
@@ -167,7 +167,7 @@ local GitArea = {
   GitBranch,
   GitMetrics,
 }
-GitArea = utils.surround({ seps.upper.left, seps.lower.right }, 'selection', GitArea)
+GitArea = utils.surround({ seps.upper.left, seps.lower.right }, 'surface0', GitArea)
 GitArea = {
   GitArea,
   condition = conditions.is_git_repo,
@@ -219,7 +219,7 @@ local CWD = {
       return self.pwd and vim.bo.filetype ~= 'help'
     end
   end,
-  hl = { fg = 'white' },
+  hl = { fg = 'overlay1' },
   {
     provider = function(self)
       return self.pwd
@@ -265,7 +265,7 @@ local FileName = {
   provider = function(self)
     return self.filename
   end,
-  hl = { fg = 'bright_white', bold = true },
+  hl = { fg = 'text', bold = true },
 }
 
 -- Current help file name
@@ -277,7 +277,7 @@ local HelpFileName = {
     local filename = vim.api.nvim_buf_get_name(0)
     return vim.fn.fnamemodify(filename, ':t')
   end,
-  hl = { fg = 'bright_white', bold = true },
+  hl = { fg = 'text', bold = true },
 }
 
 -- File modified icon
@@ -286,7 +286,7 @@ local FileModified = {
     return vim.bo.modified
   end,
   provider = ' ',
-  hl = { fg = 'bright_white' },
+  hl = { fg = 'text' },
 }
 
 -- Compilation
@@ -303,7 +303,7 @@ local PathArea = {
     Align,
   },
 }
-PathArea = utils.surround({ seps.upper.left, seps.upper.right }, 'selection', PathArea)
+PathArea = utils.surround({ seps.upper.left, seps.upper.right }, 'surface0', PathArea)
 
 -- LSP AREA
 
@@ -325,7 +325,7 @@ local LSPDiagnostics = {
   {
     provider = function(self)
       if self.errors > 0 then
-        return table.concat({ self.errors, self.error_icon, ' ' })
+        return table.concat({' ', self.errors, self.error_icon, ' ' })
       end
     end,
     hl = { fg = 'red' },
@@ -344,7 +344,7 @@ local LSPDiagnostics = {
         return table.concat({ self.info, self.info_icon, ' ' })
       end
     end,
-    hl = { fg = 'cyan' },
+    hl = { fg = 'sapphire' },
   },
   {
     provider = function(self)
@@ -352,7 +352,7 @@ local LSPDiagnostics = {
         return table.concat({ self.hints, self.hint_icon, ' ' })
       end
     end,
-    hl = { fg = 'cyan' },
+    hl = { fg = 'sapphire' },
   },
   on_click = {
     callback = function()
@@ -373,7 +373,7 @@ local LSPActive = {
     end
     return '' .. table.concat(names, ' ') .. '  '
   end,
-  hl = { fg = 'cyan', bold = true },
+  hl = { fg = 'sapphire', bold = true },
   on_click = {
     name = 'heirline_LSP',
     callback = function()
@@ -389,7 +389,7 @@ local LSPArea = {
   LSPDiagnostics,
   LSPActive,
 }
-LSPArea = utils.surround({ seps.lower.left, seps.upper.right }, 'selection', LSPArea)
+LSPArea = utils.surround({ seps.lower.left, seps.upper.right }, 'surface0', LSPArea)
 LSPArea = {
   LSPArea,
   condition = conditions.lsp_attached or conditions.has_diagnostics,
@@ -486,7 +486,7 @@ local FileInfoArea = {
   FileFormat,
   FileType,
 }
-FileInfoArea = utils.surround({ seps.lower.left, seps.upper.right }, 'selection', FileInfoArea)
+FileInfoArea = utils.surround({ seps.lower.left, seps.upper.right }, 'surface0', FileInfoArea)
 FileInfoArea = {
   FileInfoArea,
 
@@ -520,7 +520,7 @@ local NavigationArea = {
   ScrollBar,
   hl = function(self)
     local mode = self.mode:sub(1, 1)
-    return { fg = 'black', bg = self.mode_colors[mode], bold = true }
+    return { fg = 'crust', bg = self.mode_colors[mode], bold = true }
   end,
 }
 NavigationArea = utils.surround({ seps.lower.left, nil }, nil, NavigationArea)
@@ -576,24 +576,24 @@ local StatusLine = {
   },
   static = {
     mode_colors = {
-      n = 'purple',
+      n = 'mauve',
       i = 'green',
       v = 'yellow',
       V = 'yellow',
       ['\22'] = 'yellow',
-      c = 'purple',
-      s = 'cyan',
-      S = 'cyan',
-      ['\19'] = 'cyan',
-      R = 'orange',
-      r = 'orange',
+      c = 'mauve',
+      s = 'sapphire',
+      S = 'sapphire',
+      ['\19'] = 'sapphire',
+      R = 'peach',
+      r = 'peach',
       ['!'] = 'green',
       t = 'red',
     },
   },
   hl = function(self)
     local mode = self.mode:sub(1, 1)
-    return { bg = 'black', fg = self.mode_colors[mode] }
+    return { bg = 'base', fg = self.mode_colors[mode] }
   end,
 }
 

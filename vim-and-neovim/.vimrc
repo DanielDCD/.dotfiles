@@ -9,7 +9,7 @@ endif
 call plug#begin('$HOME/.vim/plugged')
 
 " Themes.
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Code completion.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -61,7 +61,7 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 " Load plugin config
-colorscheme dracula
+colorscheme catppuccin_macchiato
 source $HOME/.vim/plugin-config/load-config.vim
 
 " Prevent background color from disappearing while scrolling.
