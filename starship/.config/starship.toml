@@ -1,6 +1,7 @@
 format = """
  [](bright-black)\
 $sudo\
+$shell\
 $username\
 [](bg:blue fg:bright-black)\
 $directory\
@@ -37,6 +38,11 @@ add_newline = true
 symbol = " "
 style = "fg:white bg:bright-black"
 format = "[$symbol]($style)"
+disabled = false
+
+[shell]
+style = "fg:white bg:bright-black"
+format = "[$indicator ]($style)"
 disabled = false
 
 [username]
