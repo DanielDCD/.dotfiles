@@ -40,6 +40,11 @@ if command -v zoxide &> /dev/null; then
     eval "$(zoxide init --cmd cd zsh)"
 fi
 
+# fzf
+if command -v fzf &> /dev/null; then
+    source <(fzf --zsh)
+fi
+
 # Make vi (Neovim) the default text editor
 export EDITOR="vi"
 
