@@ -7,7 +7,7 @@ HYPHEN_INSENSITIVE="true"
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git sudo zoxide macos vi-mode)
+plugins=(git sudo macos vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -33,6 +33,11 @@ fi
 
 if command -v rg &> /dev/null; then
     alias grep="rg"
+fi
+
+# Zoxide
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init --cmd cd zsh)"
 fi
 
 # Make vi (Neovim) the default text editor
