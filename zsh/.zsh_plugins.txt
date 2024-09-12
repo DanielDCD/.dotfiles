@@ -14,3 +14,6 @@ zsh-users/zsh-syntax-highlighting
 
 # Completions
 zsh-users/zsh-completions
+
+# You should use
+MichaelAquilina/zsh-you-should-use
