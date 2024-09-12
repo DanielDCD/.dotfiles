@@ -11,3 +11,5 @@ zsh-users/zsh-autosuggestions
 # Syntax highlighting
 zsh-users/zsh-syntax-highlighting
 
+# Completions
+zsh-users/zsh-completions
