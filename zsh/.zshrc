@@ -1,3 +1,7 @@
+# Antidote
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
+
 # Aliases
 alias c=clear
 alias cls=clear
@@ -56,7 +60,3 @@ fi
 
 # Starship prompt
 eval "$(starship init zsh)"
-
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
-
