@@ -1,8 +1,3 @@
-# Autoinstall antidote
-if ! type antidote &> /dev/null; then
-    git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote &> /dev/null
-fi
-
 # Antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
