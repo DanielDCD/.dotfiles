@@ -3,6 +3,11 @@ if ! type antidote &> /dev/null; then
     git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote &> /dev/null
 fi
 
+# Starship autoinstall
+if ! type starship &> /dev/null; then
+    curl -sS https://starship.rs/install.sh | sh
+fi
+
 # Antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
